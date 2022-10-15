@@ -1,0 +1,167 @@
+.resizer-wrapper {
+    margin: 1em auto;
+    text-align: center;
+}
+
+.resize-percent-label {
+    font-size: 17px;
+    margin-left: 170px;
+    margin-top: 30px;
+    text-align: left;
+    color: #2C6DA0;
+}
+
+.files-label {
+    border-bottom: 1px solid #d3d3d3;
+    color: #d3d3d3;;
+}
+
+.method-selection {
+    color: #2C6DA0;
+    padding: 20px 110px 35px 0;
+}
+
+.method-selection label {
+    padding-right: 20px;
+}
+
+.description {
+    margin: 1em auto;
+    color: #2C6DA0;
+}
+
+.form-check-label {
+    color: #2C6DA0;
+    font-size: 100%;
+}
+
+.define_result_label {
+    margin: 1em auto;
+    text-align: center;
+    color: #2C6DA0;
+}
+
+.percent {
+    width: 330px;
+}
+
+#percent-resize {
+    border: 0 none;
+    color: #58AA00;
+    font-size: 130%;
+    font-weight: bold;
+    width: 30px;
+}
+
+.percent_label {
+    border: 0;
+    color: #2C6DA0;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+#resize-form {
+    margin: 1em auto 2em;
+    text-align: center;
+    position: relative;
+}
+
+.button {
+    padding: 5px 10px;
+    display: inline;
+    background: #777;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    text-shadow: 1px 1px #666;
+}
+
+.button:hover {
+    background-position: 0 center;
+}
+
+.button:active {
+    background-position: 0 top;
+    position: relative;
+    top: 1px;
+    padding: 6px 10px 4px;
+}
+
+.button.large {
+    font-size: 125%;
+    padding: 7px 12px;
+}
+
+.button.blue, .button.green {
+    background-color: #2c6da0;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+}
+
+.button.green {
+    background-color: #58aa00
+}
+
+.button.large.resize-btn {
+    padding: 7px 35px;
+}
+
+#fileInput {
+    display: none;
+}
+
+.resize-params-input, .radio-input-wrapper {
+    margin: 1em auto;
+    display: flex;
+    justify-content: center;
+}
+
+.radio-input-wrapper {
+    max-width: 400px;
+    justify-content: space-evenly;
+}
+
+.range-slider {
+    min-height: 90px;
+}
+
+.slider {
+    width: 100%;
+    max-width: 350px;
+    cursor: pointer;
+}
+
+.after-resize-txt {
+    color: #2C6DA0;
+    font-weight: bold;
+    font-size: 110%;
+}
+
+#percent-value-id {
+    margin: 0 .5em;
+    color: #58AA00;
+    font-size: 130%;
+}
+
+.tool-description-wrapper {
+    display: none;
+}
+
+.main-body-container {
+    background-color: #FFFFFF;
+}
+
+body {
+    background-color: #FFFFFF;
+}
+
+@media screen and (min-width: 768px) {
+
+    #resize-form {
+        margin: 1.5em auto 2em;
+    }
+}
+

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel= "stylesheet" type= "text/css" href= "static/main.css">
+
+
+	<title>
+		Prescribe | MyPharma.ie
+	</title>
+				<style>
+
+
+
+</style>
+
+</head>
+<body>
+
+
+
+		<header>
+		<ul id="nav_bar">
+
+		<a href="PhysicianPrescribe.html">
+			<li class="nav_bar_links_active">Submit Prescription</li>
+			</a>
+
+			<a href="PharmacyRetrieve.html">
+			<li class="nav_bar_links">Retrieve a Prescription</li>
+			</a>
+
+			<a href="PhysicianAmmendReq.html">
+			<li class="nav_bar_links">Amend Prescription</li>
+			</a>
+
+
+			<a href="PhysicianRegister.html">
+			<li class="nav_bar_links">Register Surgery</li>
+			</a>
+
+			<a href="PharmacyRegister.html">
+			<li class="nav_bar_links">Register Pharmacy</li>
+			</a>
+
+				<a href="http://localhost:5000 "><img id="logo" src="static/MyPharmaLogo.jpeg" alt="MyPharma"></a>
+
+		</ul>
+	</header>
+
+	<div id="wrapper">
+									<a href="http://localhost:5000"<p id="logo_title"> MyPharma.ie </p></a>
+
+
+		<form action='/prescribe' method = "POST" id="form">
+				<p>Patient PPS Number</p>
+			    <input type = "text" name = "PatientPPSN" />
+				<p>GP IMC Number</p>
+			    <input type = "integer" name = "PhysicianIMCN" />
+				<p>Patient Name</p>
+			   <input type = "text" name = "PatientName" />
+				 <p>Prescription Contents</p>
+			  <textarea type = "text" name = "PrescriptionContents"></textarea>
+				<p>Prescription Frequency (Days) </p>
+			<input type = "integer" name = "PrecriptionFreq" />
+
+			<p><input type = "submit" value = "Submit" /></p>
+</form>
+
+
+
+
+
+	</div>
+
+
+	<footer>
+			&copy; 2022
+		</footer>
+
+
+</body>
+</html>
