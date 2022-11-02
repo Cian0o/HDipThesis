@@ -29,6 +29,20 @@ header{
 	height: 100px;
 }
 
+#logInFormContainer{
+	float: right;
+	display:block
+}
+
+#logInFormContainer{
+	float: right;
+	display:block
+}
+
+#logInForm{
+	float: right;
+	display:block
+}
 li.nav_bar_links_active {
 	display: inline;
 	list-style-type: none;
