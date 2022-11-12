@@ -1,5 +1,14 @@
 const loginIcon = document.querySelector('#loginIcon');
 
+function loginCredentials(){
+    var x = document.getElementById("login-content");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
 loadEventListeners();
 
 function loadEventListeners(){

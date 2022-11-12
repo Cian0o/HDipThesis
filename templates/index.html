@@ -49,24 +49,33 @@
 			</div>
 
 
-			<div id="loginIcon">
-				<img src="static/logintry2_75x75.png" onclick="logInForm()">
-<!--				<div id="logInFormContainer">-->
-<!--					<form id="logInForm">-->
-<!--						<label for="Username">Username</label>-->
-<!--						<input type="text" id="Username" name="Username">-->
-<!--						<label for="Password" id="Password">Password</label>-->
-<!--						<input type="text" name="Password">-->
-<!--					</form>-->
-<!--				</div>-->
-			</div>
+			<aside class="login">
 
+
+					<a href="#"><img src="static/logintry2_75x75.png" onclick="loginCredentials()"></a>
+				<div id="login-content">
+					<div class="arrow-up"></div>
+
+					<div id="loginDropDown">
+						<form class="login-form">
+
+								<p style="font-weight: bold" >Login Email</p>
+								<input class="inputBoxBlack" type="email" name="LoginEmail">
+								<br>
+								<p style="font-weight: bold">Password</p>
+								<input class="inputBoxBlack" type="text" name="Password">
+								<br>
+								<p><input class="buttonBlack" type = "submit" value = "Login" /></p>
+						</form>
+					</div>
+				</div>
+			</aside>
 	</header>
 
 	<div id="wrapper">
 
 
-			<a href="http://localhost:5000"><p id="logo_title"> MyPharma.ie </p></a>
+			<a href="#"><p id="logo_title"> MyPharma.ie </p></a>
 
 
 		<div id="homeintro">
@@ -86,9 +95,20 @@
 	</div>
 
 
-	<footer>
-			&copy; 2022
+	<footer style="font-weight: bold;">
+			&copy; 2023
 		</footer>
+
+		<script>
+			function loginCredentials() {
+				var x = document.getElementById("login-content");
+				if (x.style.display === "none") {
+					x.style.display = "block";
+				} else {
+					x.style.display = "none";
+				}
+			}
+		</script>
 
 		<script src="app.js"></script>
 </body>
