@@ -48,6 +48,10 @@ header{
 
 }
 
+#login-content{
+	display: none;
+}
+
 .inputBoxBlack{
 	background-color: #000000;
 	color: #65db61;
