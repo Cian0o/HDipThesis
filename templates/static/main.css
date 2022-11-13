@@ -38,7 +38,7 @@ header{
 .login-form{
 	position: absolute;
 	width: 160px;
-	height: 96px;
+	height: 115px;
 	z-index: 5;
 	color: #000000;
 	right: 0;
@@ -56,7 +56,7 @@ header{
 	background-color: #000000;
 	color: #65db61;
 	font-weight: bold;
-	position: absolute;
+	position: relative;
 }
 
 .inputBoxGreen{
@@ -69,13 +69,81 @@ header{
 	background-color: #000000;
 	color: #65db61;
 	font-weight: bold;
+	position: relative;
+	left: 48px;
 
 }
 
 .buttonGreen{
+	display: inline-block;
+	border-radius: 4px;
 	background-color: #65db61;
+	border: none;
 	color: #000000;
+	text-align: center;
+	font-size: 18px;
+	padding: 10px;
+	width: 100px;
+	transition: all 0.5s;
+	cursor: pointer;
+	margin: 2px;
+	caret-color: #000000;
 	font-weight: bold;
+}
+.buttonGreen span {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+}
+
+.buttonGreen span:after {
+	content: '\00bb';
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.5s;
+}
+
+.buttonGreen:hover span {
+	padding-right: 25px;
+}
+
+.buttonGreen:hover span:after {
+	opacity: 1;
+	right: 0;
+}
+
+.buttonGreen span:after {
+	content: '\00bb';
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.5s;
+}
+
+.buttonGreen:hover span {
+	padding-right: 25px;
+}
+
+.buttonGreen:hover span:after {
+	opacity: 1;
+	right: 0;
+}
+
+
+
+.formProto{
+	position: relative;
+	top: 150px;
+	left: 600px;
+	display: inline;
+
+}
+.bodyForms{
+	color: #65db61;
 }
 
 #logo_title{
