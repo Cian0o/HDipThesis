@@ -106,29 +106,32 @@
 				<textarea id="field5" class="inputBoxGreen"></textarea>
 				<br>
 				<br>
-				<button type="submit" value="Submit" class="buttonGreen" style="vertical-align:middle"><span> Submit </span></button>
+				<button onclick="confirmAppear()" type="submit" value="Submit" class="buttonGreen" style="vertical-align:middle"><span> Submit </span></button>
 
 
 
 			</form>
 
-			<div class="confirmInput">
+			<div class="confirmInput" id="popUpConfirm" style="display:none;">
 					<table class="confirmInputContent">
 						<thead>
 							<tr>
-								<th>Field 0</th>
-								<th>Field 1</th>
-								<th>Field 2</th>
-								<th>Field 3</th>
-								<th>Field 4</th>
-								<th>Field 5</th>
-								<th></th>
+								<th>Field0</th>
+								<th>Field1</th>
+								<th>Field2</th>
+								<th>Field3</th>
+								<th>Field4</th>
+								<th>Field5</th>
+								<th>Remove</th>
 							</tr>
 						</thead>
 
 					<tbody id="dynamicTableRows"></tbody>
 
 					</table>
+				<br>
+				<button type="submit" value="Submit" class="buttonGreen" style="vertical-align:middle"><span> Confirm </span></button>
+
 			</div>
 
 
@@ -155,6 +158,13 @@
 					x.style.display = "none";
 				}
 			}
+
+			function confirmAppear(){
+				var popUpConfirm = document.getElementById("popUpConfirm");
+				popUpConfirm.style.display = "block";
+
+			}
+
 			//
 			// class Record {
 			// 	constructor(field0, field1, field2, field3, field4, field5) {

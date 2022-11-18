@@ -125,7 +125,7 @@ header{
 }
 
 .buttonGreen:hover span {
-	padding-right: 25px;
+	padding-right: 20px;
 }
 
 .buttonGreen:hover span:after {
@@ -138,7 +138,7 @@ header{
 .formProto{
 	position: relative;
 	top: 150px;
-	left: 600px;
+	left: 400px;
 	display: inline;
 
 }
@@ -148,9 +148,9 @@ header{
 }
 
 .confirmInput{
-	position: fixed;
-	right: 100px;
-	bottom: 450px;
+	position: absolute;
+	left: 250px;
+	top: 200px;
 	width: 30%;
 }
 

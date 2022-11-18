@@ -23,7 +23,7 @@ class UI {
 					  <td>${record.field3}</td>
 					  <td>${record.field4}</td>
 					  <td>${record.field5}</td>
-					  <td><a href="#" class="delete">X<a></td>
+					  <td style="color: #65db61;"><a href="#" class="delete">X<a></td>
 					`;
 
         list.appendChild(row);
@@ -49,7 +49,7 @@ class UI {
         }, 3000);
     }
 
-    deleteBook(target) {
+    deleteRecord(target) {
         if(target.className === 'delete') {
             target.parentElement.parentElement.remove();
         }
@@ -69,11 +69,11 @@ class UI {
 document.getElementById('bodyForms').addEventListener('submit', function(e){
     // Get form values
     const 	field0 = document.getElementById('field0').value,
-        field1 = document.getElementById('field1').value,
-        field2 = document.getElementById('field2').value
-    field3 = document.getElementById('field3').value
-    field4 = document.getElementById('field4').value
-    field5 = document.getElementById('field5').value
+            field1 = document.getElementById('field1').value,
+            field2 = document.getElementById('field2').value
+            field3 = document.getElementById('field3').value
+            field4 = document.getElementById('field4').value
+            field5 = document.getElementById('field5').value
 
     // Instantiate book
     const record = new Record(field0, field1, field2, field3, field4, field5);
@@ -108,7 +108,7 @@ document.getElementById('dynamicTableRows').addEventListener('click', function(e
     const ui = new UI();
 
     // Delete book
-    ui.deleteBook(e.target);
+    ui.deleteRecord(e.target);
 
     // Show message
     ui.showAlert('Record Removed!', 'success');
