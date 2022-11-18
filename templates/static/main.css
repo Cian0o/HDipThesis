@@ -142,10 +142,28 @@ header{
 	display: inline;
 
 }
-.bodyForms{
+#bodyForms{
 	color: #65db61;
+
 }
 
+.confirmInput{
+	position: fixed;
+	right: 100px;
+	bottom: 450px;
+	width: 30%;
+}
+
+.confirmInputContent{
+	color: #65db61;
+	border: solid 3px #65db61;
+	width: 100%;
+}
+
+.confirmInputContent:hover{
+	color: #000000;
+	background:#65db61;
+}
 #logo_title{
     float: left;
     font-size: 40px;

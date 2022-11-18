@@ -85,32 +85,51 @@
 
 		<div class="formProto">
 
-			<form class="bodyForms">
+			<form id="bodyForms">
+				<h2>Prototype Form</h2>
 				<p>Field 0</p>
-				<input class="inputBoxGreen">
+				<input id="field0" class="inputBoxGreen">
 				<br>
 				<p>Field 1</p>
-				<input class="inputBoxGreen">
+				<input id="field1" class="inputBoxGreen">
 				<br>
 				<p>Field 2</p>
-				<input class="inputBoxGreen">
+				<input id="field2" class="inputBoxGreen">
 				<br>
 				<p>Field 3</p>
-				<input class="inputBoxGreen">
+				<input id="field3" class="inputBoxGreen">
 				<br>
 				<p>Field 4</p>
-				<input class="inputBoxGreen">
+				<input id="field4" class="inputBoxGreen">
 				<br>
 				<p>Field 5</p>
-				<textarea class="inputBoxGreen"></textarea>
+				<textarea id="field5" class="inputBoxGreen"></textarea>
 				<br>
 				<br>
-				<button class="buttonGreen" style="vertical-align:middle"><span> Submit </span></button>
+				<button type="submit" value="Submit" class="buttonGreen" style="vertical-align:middle"><span> Submit </span></button>
 
 
 
 			</form>
 
+			<div class="confirmInput">
+					<table class="confirmInputContent">
+						<thead>
+							<tr>
+								<th>Field 0</th>
+								<th>Field 1</th>
+								<th>Field 2</th>
+								<th>Field 3</th>
+								<th>Field 4</th>
+								<th>Field 5</th>
+								<th></th>
+							</tr>
+						</thead>
+
+					<tbody id="dynamicTableRows"></tbody>
+
+					</table>
+			</div>
 
 
 		</div>
@@ -136,6 +155,123 @@
 					x.style.display = "none";
 				}
 			}
+			//
+			// class Record {
+			// 	constructor(field0, field1, field2, field3, field4, field5) {
+			// 		this.field0 = field0;
+			// 		this.field1 = field1;
+			// 		this.field2 = field2;
+			// 		this.field3 = field3;
+			// 		this.field4 = field4;
+			// 		this.field5 = field5;
+			// 	}
+			// }
+			//
+			// class UI {
+			// 	addBookToList(record) {
+			// 		const list = document.getElementById('dynamicTableRows');
+			// 		// Create tr element
+			// 		const row = document.createElement('tr');
+			// 		// Insert cols
+			// 		row.innerHTML = `
+			// 		  <td>${record.field0}</td>
+			// 		  <td>${record.field1}</td>
+			// 		  <td>${record.field2}</td>
+			// 		  <td>${record.field3}</td>
+			// 		  <td>${record.field4}</td>
+			// 		  <td>${record.field5}</td>
+			// 		  <td><a href="#" class="delete">X<a></td>
+			// 		`;
+			//
+			// 		list.appendChild(row);
+			// 	}
+			//
+			// 	showAlert(message, className) {
+			// 		// Create div
+			// 		const div = document.createElement('div');
+			// 		// Add classes
+			// 		div.className = `alert ${className}`;
+			// 		// Add text
+			// 		div.appendChild(document.createTextNode(message));
+			// 		// Get parent
+			// 		const confirmInput = document.querySelector('.confirmInput');
+			// 		// Get form
+			// 		const form = document.querySelector('#bodyForms');
+			// 		// Insert alert
+			// 		confirmInput.insertBefore(div, form);
+			//
+			// 		// Timeout after 3 sec
+			// 		setTimeout(function(){
+			// 			document.querySelector('.alert').remove();
+			// 		}, 3000);
+			// 	}
+			//
+			// 	deleteBook(target) {
+			// 		if(target.className === 'delete') {
+			// 			target.parentElement.parentElement.remove();
+			// 		}
+			// 	}
+			//
+			// 	clearFields() {
+			// 		document.getElementById('field0').value = '';
+			// 		document.getElementById('field1').value = '';
+			// 		document.getElementById('field2').value = '';
+			// 		document.getElementById('field3').value = '';
+			// 		document.getElementById('field4').value = '';
+			// 		document.getElementById('field5').value = '';
+			// 	}
+			// }
+			//
+			// // Event Listener for add record
+			// document.getElementById('bodyForms').addEventListener('submit', function(e){
+			// 	// Get form values
+			// 	const 	field0 = document.getElementById('field0').value,
+			// 			field1 = document.getElementById('field1').value,
+			// 			field2 = document.getElementById('field2').value
+			// 			field3 = document.getElementById('field3').value
+			// 			field4 = document.getElementById('field4').value
+			// 			field5 = document.getElementById('field5').value
+			//
+			// 	// Instantiate book
+			// 	const record = new Record(field0, field1, field2, field3, field4, field5);
+			//
+			// 	// Instantiate UI
+			// 	const ui = new UI();
+			//
+			// 	console.log(ui);
+			//
+			// 	// Validate
+			// 	if(title === '' || author === '' || isbn === '') {
+			// 		// Error alert
+			// 		ui.showAlert('Please fill in all fields', 'error');
+			// 	} else {
+			// 		// Add book to list
+			// 		ui.addBookToList(record);
+			//
+			// 		// Show success
+			// 		ui.showAlert('Record Added!', 'success');
+			//
+			// 		// Clear fields
+			// 		ui.clearFields();
+			// 	}
+			//
+			// 	e.preventDefault();
+			// });
+			//
+			// // Event Listener for delete
+			// document.getElementById('dynamicTableRows').addEventListener('click', function(e){
+			//
+			// 	// Instantiate UI
+			// 	const ui = new UI();
+			//
+			// 	// Delete book
+			// 	ui.deleteBook(e.target);
+			//
+			// 	// Show message
+			// 	ui.showAlert('Record Removed!', 'success');
+			//
+			// 	e.preventDefault();
+			// });
 		</script>
 
 		<script src="static/app.js"></script>
