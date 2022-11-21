@@ -1,0 +1,12 @@
+{
+  "name": "cianwalker_hdipproject_10021419",
+  "version": "1.0.0",
+  "description": "tEireP",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "cianwalker",
+  "license": "ISC"
+}
