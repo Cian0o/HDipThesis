@@ -63,6 +63,7 @@ header{
 	background-color: #65db61;
 	color: #000000;
 	font-weight: bold;
+
 }
 
 .buttonBlack{
@@ -138,7 +139,7 @@ header{
 .formProto{
 	position: relative;
 	top: 150px;
-	left: 400px;
+	left: 200px;
 	display: inline;
 
 }
