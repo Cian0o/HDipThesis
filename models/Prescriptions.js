@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
 
 const SurgerySchema = new mongoose.Schema({
-    IMCN:{
+    PatientPPSN:{
         type: Number,
         required: true,
         unique: true
     },
-    DocEmail:{
+    PatientName :{
         type: String,
         required: true,
         unique: true

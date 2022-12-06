@@ -1,34 +1,34 @@
 const mongoose = require('mongoose');
 
-const SurgerySchema = new mongoose.Schema({
-    IMCN:{
+const PharmacySchema = new mongoose.Schema({
+    PSIN:{
         type: Number,
         required: true,
         unique: true
     },
-    DocEmail:{
+    PharmaEmail:{
         type: String,
         required: true,
         unique: true
     },
-    DocPassword:{
+    PharmaPassword:{
         type: String,
         required: true
     },
-    DocPasswordConf:{
+    PharmaPasswordConf:{
         type: String,
         required: true
     },
-    DocName:{
+    PharmaName:{
         type: String,
         required: true
     },
-    DocPhone:{
+    PharmaPhone:{
         type: Number,
         required: true,
         unique: true
     },
-    DocAddress:{
+    PharmaAddress:{
         type: String,
         required: true
     },
@@ -42,4 +42,4 @@ const SurgerySchema = new mongoose.Schema({
 
 });
 
-module.exports = Surgery = mongoose.model('surgery',SurgerySchema);
+module.exports = Pharmacy = mongoose.model('surgery',PharmacySchema);

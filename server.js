@@ -47,7 +47,7 @@ app.use('/api/pharmacies', require('./routes/api/pharmacies'));
 app.use('/api/surgeries', require('./routes/api/surgeries'));
 app.use('/api/auth', require('./routes/api/auth'));
 app.use('/api/prescriptions', require('./routes/api/prescriptions'));
-app.use('/api/testRecord', require('./routes/api/testRecord'));
+
 
 
 app.listen(port, console.log(`Server running http://localhost:${port} in ${process.env.NODE_ENV} mode on port ${port}`) );

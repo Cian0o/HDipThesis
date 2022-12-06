@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel= "stylesheet" type= "text/css" href= "/css/style.css">
+
+
+	<title>
+		Homepage | MyPharma
+	</title>
+				<style>
+
+
+
+</style>
+
+</head>
+<body>
+
+
+
+		<header>
+
+			<div class="navbar">
+
+				<div class="dropdown">
+					<button class="dropbtn">Register
+						<i class="fa fa-caret-down"></i>
+					</button>
+					<div class="dropdown-content">
+						<a href="RegisterSurgery.html">Register Surgery</a>
+						<a href="RegisterPharmacy.html">Register Pharmacy</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="dropdown">
+				<button class="dropbtn">Prescriptions
+					<i class="fa fa-caret-down"></i>
+				</button>
+				<div class="dropdown-content">
+					<a href="Prescribe.html">Submit Prescription</a>
+					<a href="#">Retrieve Prescription</a>
+					<a href="#">Amend Prescription</a>
+				</div>
+			</div>
+			</div>
+
+
+			<aside class="login">
+
+
+					<a href="#"><img src="images/logintry2_75x75.png" onclick="loginCredentials()"></a>
+				<div id="login-content">
+					<div class="arrow-up"></div>
+
+					<div id="loginDropDown">
+						<form class="login-form">
+
+								<p style="font-weight: bold" >Login Email</p>
+								<input class="inputBoxBlack" type="email" name="LoginEmail">
+								<br>
+								<p style="font-weight: bold">Password</p>
+								<input class="inputBoxBlack" type="text" name="Password">
+								<br>
+
+								<a href="#"><p style="font-weight: bold; font-size: 14px; color: #000000;" >Forgot Login Credentials?</p></a>
+
+								<p><input class="buttonBlack" type = "submit" value = "Login" /></p>
+
+						</form>
+					</div>
+				</div>
+			</aside>
+	</header>
+
+	<div id="wrapper">
+
+
+
+
+			<br>
+
+		<div class="formProto">
+
+			<form id="bodyForms" action='/RegisterDoc' method = "POST">
+				<h2>Register Surgery</h2>
+				<p>Irish Medical Council Number</p>
+				<input type="number" id="field0" name="IMCN" class="inputBoxGreen">
+				<br>
+				<p>Email</p>
+				<input type="email" id="field1" name="docEmail" class="inputBoxGreen">
+				<br>
+				<p>Create Password</p>
+				<input type="text" id="field2" name="docPassword" class="inputBoxGreen">
+				<br>
+<!--				VALIDATION!!!-->
+				<p>Confirm Password</p>
+				<input type="text" id="field3" name="docPasswordConf" class="inputBoxGreen">
+				<br>
+				<p>Surgery Name</p>
+				<input type="text" id="field4" name="docName" class="inputBoxGreen">
+				<br>
+				<p>Surgery Phone</p>
+				<input type="number" id="field5" name="docPhone" class="inputBoxGreen">
+				<br>
+				<p>Surgery  Address</p>
+				<textarea type="text" id="field6" name="docAddress" class="inputBoxGreen"></textarea>
+				<br>
+				<br>
+				<button onclick="confirmAppear()" type="submit" value="Submit" class="buttonGreen" style="vertical-align:middle"><span> Submit </span></button>
+
+
+
+			</form>
+
+			<div class="confirmInput" id="popUpConfirm" style="display:none;">
+					<table class="confirmInputContent">
+						<thead>
+							<tr>
+								<th>Field0</th>
+								<th>Field1</th>
+								<th>Field2</th>
+								<th>Field3</th>
+								<th>Field4</th>
+								<th>Field5</th>
+								<th>Remove</th>
+							</tr>
+						</thead>
+
+					<tbody id="dynamicTableRows"></tbody>
+
+					</table>
+				<br>
+				<button type="submit" value="Submit" class="buttonGreen" style="vertical-align:middle"><span> Confirm </span></button>
+
+			</div>
+
+
+		</div>
+
+
+
+
+
+
+	</div>
+
+
+	<footer style="font-weight: bold;">
+			&copy; 2023
+		</footer>
+
+		<script>
+			function loginCredentials() {
+				var x = document.getElementById("login-content");
+				if (x.style.display === "none") {
+					x.style.display = "block";
+				} else {
+					x.style.display = "none";
+				}
+			}
+
+			function confirmAppear(){
+				var popUpConfirm = document.getElementById("popUpConfirm");
+				popUpConfirm.style.display = "block";
+
+			}
+
+			//
+			// class Record {
+			// 	constructor(field0, field1, field2, field3, field4, field5) {
+			// 		this.field0 = field0;
+			// 		this.field1 = field1;
+			// 		this.field2 = field2;
+			// 		this.field3 = field3;
+			// 		this.field4 = field4;
+			// 		this.field5 = field5;
+			// 	}
+			// }
+			//
+			// class UI {
+			// 	addBookToList(record) {
+			// 		const list = document.getElementById('dynamicTableRows');
+			// 		// Create tr element
+			// 		const row = document.createElement('tr');
+			// 		// Insert cols
+			// 		row.innerHTML = `
+			// 		  <td>${record.field0}</td>
+			// 		  <td>${record.field1}</td>
+			// 		  <td>${record.field2}</td>
+			// 		  <td>${record.field3}</td>
+			// 		  <td>${record.field4}</td>
+			// 		  <td>${record.field5}</td>
+			// 		  <td><a href="#" class="delete">X<a></td>
+			// 		`;
+			//
+			// 		list.appendChild(row);
+			// 	}
+			//
+			// 	showAlert(message, className) {
+			// 		// Create div
+			// 		const div = document.createElement('div');
+			// 		// Add classes
+			// 		div.className = `alert ${className}`;
+			// 		// Add text
+			// 		div.appendChild(document.createTextNode(message));
+			// 		// Get parent
+			// 		const confirmInput = document.querySelector('.confirmInput');
+			// 		// Get form
+			// 		const form = document.querySelector('#bodyForms');
+			// 		// Insert alert
+			// 		confirmInput.insertBefore(div, form);
+			//
+			// 		// Timeout after 3 sec
+			// 		setTimeout(function(){
+			// 			document.querySelector('.alert').remove();
+			// 		}, 3000);
+			// 	}
+			//
+			// 	deleteBook(target) {
+			// 		if(target.className === 'delete') {
+			// 			target.parentElement.parentElement.remove();
+			// 		}
+			// 	}
+			//
+			// 	clearFields() {
+			// 		document.getElementById('field0').value = '';
+			// 		document.getElementById('field1').value = '';
+			// 		document.getElementById('field2').value = '';
+			// 		document.getElementById('field3').value = '';
+			// 		document.getElementById('field4').value = '';
+			// 		document.getElementById('field5').value = '';
+			// 	}
+			// }
+			//
+			// // Event Listener for add record
+			// document.getElementById('bodyForms').addEventListener('submit', function(e){
+			// 	// Get form values
+			// 	const 	field0 = document.getElementById('field0').value,
+			// 			field1 = document.getElementById('field1').value,
+			// 			field2 = document.getElementById('field2').value
+			// 			field3 = document.getElementById('field3').value
+			// 			field4 = document.getElementById('field4').value
+			// 			field5 = document.getElementById('field5').value
+			//
+			// 	// Instantiate book
+			// 	const record = new Record(field0, field1, field2, field3, field4, field5);
+			//
+			// 	// Instantiate UI
+			// 	const ui = new UI();
+			//
+			// 	console.log(ui);
+			//
+			// 	// Validate
+			// 	if(title === '' || author === '' || isbn === '') {
+			// 		// Error alert
+			// 		ui.showAlert('Please fill in all fields', 'error');
+			// 	} else {
+			// 		// Add book to list
+			// 		ui.addBookToList(record);
+			//
+			// 		// Show success
+			// 		ui.showAlert('Record Added!', 'success');
+			//
+			// 		// Clear fields
+			// 		ui.clearFields();
+			// 	}
+			//
+			// 	e.preventDefault();
+			// });
+			//
+			// // Event Listener for delete
+			// document.getElementById('dynamicTableRows').addEventListener('click', function(e){
+			//
+			// 	// Instantiate UI
+			// 	const ui = new UI();
+			//
+			// 	// Delete book
+			// 	ui.deleteBook(e.target);
+			//
+			// 	// Show message
+			// 	ui.showAlert('Record Removed!', 'success');
+			//
+			// 	e.preventDefault();
+			// });
+		</script>
+
+		<script src="js//app.js"></script>
+</body>
+</html>
