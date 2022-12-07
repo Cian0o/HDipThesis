@@ -42,4 +42,4 @@ const PharmacySchema = new mongoose.Schema({
 
 });
 
-module.exports = Pharmacy = mongoose.model('surgery',PharmacySchema);
+module.exports = Pharmacy = mongoose.model('pharmacy',PharmacySchema);
