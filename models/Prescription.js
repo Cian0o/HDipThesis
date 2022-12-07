@@ -1,45 +1,41 @@
 const mongoose = require('mongoose');
 
 const SurgerySchema = new mongoose.Schema({
-    PatientPPSN:{
+    PPSN:{
+        type: String,
+        required: true,
+
+    },
+    patientName :{
+        type: String,
+        required: true,
+    },
+    presFreQ:{
         type: Number,
-        required: true,
-        unique: true
+        required: true
     },
-    PatientName :{
-        type: String,
-        required: true,
-        unique: true
-    },
-    DocPassword:{
+    prescContents:{
         type: String,
         required: true
     },
-    DocPasswordConf:{
-        type: String,
-        required: true
-    },
-    DocName:{
-        type: String,
-        required: true
-    },
-    DocPhone:{
+    presDosage:{
         type: Number,
-        required: true,
-        unique: true
-    },
-    DocAddress:{
-        type: String,
         required: true
     },
-    avatar:{
-        type: String,
-    },
-    Date:{
+    prescribedDate:{
         type: Date,
+        required: true,
         default: Date.now
+    },
+    dispensedDate:{
+        type: String,
+        default: Date.now
+    //    similar to like button?
+    },
+    isDue:{
+        type: Boolean,
     },
 
 });
 
-module.exports = Surgery = mongoose.model('surgery',SurgerySchema);
+module.exports = Prescription = mongoose.model('prescription',PrescSchema);
