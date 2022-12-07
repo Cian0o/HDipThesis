@@ -45,7 +45,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.use('/api/pharmacies', require('./routes/api/pharmacies'));
 app.use('/api/surgeries', require('./routes/api/surgeries'));
-app.use('/api/auth', require('./routes/api/auth'));
+app.use('/api/docauth', require('./routes/api/docauth'));
 app.use('/api/prescriptions', require('./routes/api/prescriptions'));
 
 
