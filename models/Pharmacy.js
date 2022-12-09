@@ -4,12 +4,12 @@ const PharmacySchema = new mongoose.Schema({
     PSIN:{
         type: Number,
         required: true,
-        unique: true
+
     },
     PharmaEmail:{
         type: String,
         required: true,
-        unique: true
+
     },
     PharmaPassword:{
         type: String,
@@ -26,7 +26,7 @@ const PharmacySchema = new mongoose.Schema({
     PharmaPhone:{
         type: Number,
         required: true,
-        unique: true
+
     },
     PharmaAddress:{
         type: String,

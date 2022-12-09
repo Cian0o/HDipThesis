@@ -35,10 +35,10 @@ router.post('/', [
         console.log(req.body);
 
 
-        const {email, password} = req.body;
+        const {PharmaEmail, password} = req.body;
 
         try{
-            let pharmacy = await Pharmacy.findOne({email});
+            let pharmacy = await Pharmacy.findOne({PharmaEmail});
 
             //Check is  user exists
 

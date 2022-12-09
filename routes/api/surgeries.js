@@ -4,6 +4,7 @@ const bcrypt = require('bcryptjs');
 const {check, validationResult} = require("express-validator");
 const jwt = require('jsonwebtoken');
 const config = require('config');
+const mongoose = require('mongoose');
 const router = express.Router();
 
 const  Surgery = require('../../models/Surgery')
@@ -31,6 +32,9 @@ router.post('/', [
 
             if(surgery){
                 res.status(400).json({errors: [{msg: 'There is already a surgery registered against this email'}]});
+            } else{
+
+
             }
 
             //Get Doctor's Avatar

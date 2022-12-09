@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const SurgerySchema = new mongoose.Schema({
+const PrescSchema = new mongoose.Schema({
     PPSN:{
         type: String,
         required: true,
@@ -18,7 +18,7 @@ const SurgerySchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    presDosage:{
+    presDosageMG:{
         type: Number,
         required: true
     },
@@ -28,7 +28,7 @@ const SurgerySchema = new mongoose.Schema({
         default: Date.now
     },
     dispensedDate:{
-        type: String,
+        type: Date,
         default: Date.now
     //    similar to like button?
     },

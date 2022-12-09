@@ -4,12 +4,12 @@ const SurgerySchema = new mongoose.Schema({
     IMCN:{
         type: Number,
         required: true,
-        unique: true
+
     },
     DocEmail:{
         type: String,
         required: true,
-        unique: true
+
     },
     DocPassword:{
         type: String,
@@ -26,7 +26,7 @@ const SurgerySchema = new mongoose.Schema({
     DocPhone:{
         type: Number,
         required: true,
-        unique: true
+
     },
     DocAddress:{
         type: String,
