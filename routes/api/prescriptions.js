@@ -40,7 +40,7 @@ router.get('/', prescMiddle, async (req, res) => {
 
 
 
-router.post('/', [
+router.post('/', prescMiddle, [
         check('PPSN', 'Please Enter a valid PPS Number').not().isEmpty()
         , check('patientName', 'Please Enter an Patient Name').not().isEmpty(),
         check('presFreQ', 'Please enter a  prescription frequency in days').isNumeric().not().isEmpty(),
