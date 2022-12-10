@@ -4,7 +4,6 @@ const PrescSchema = new mongoose.Schema({
     PPSN:{
         type: String,
         required: true,
-
     },
     patientName :{
         type: String,

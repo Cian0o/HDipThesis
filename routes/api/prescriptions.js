@@ -1,5 +1,5 @@
 const express = require('express');
-const gravatar = require('gravatar');
+
 const bcrypt = require('bcryptjs');
 const {check, validationResult} = require("express-validator");
 const jwt = require('jsonwebtoken');
@@ -7,11 +7,25 @@ const config = require('config');
 const router = express.Router();
 
 const  Prescription = require('../../models/Prescription')
-// const docauth = require("../../middleware/docauth");
+const prescMiddle = require('../../middleware/prescMiddle')
 
-// route is: GET api/auth
-// Description: Test Route
-// Access: Public
+
+// route is: GET api/prescription
+// Description: Retrieve Prescription Route
+// Access: Private
+
+
+router.get('/', prescMiddle, async (req, res) => {
+    try{
+        const PPSN = req.body;
+        const prescription = await Prescription.find(PPSN);
+        res.json(prescription);
+    } catch(err){
+        console.error(err.message);
+        res.status(500).send('Server Error');
+    }
+});
+
 
 
 // router.get('/', docauth, async (req, res) => {
