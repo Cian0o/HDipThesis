@@ -35,7 +35,7 @@ router.post('/', [
         console.log(req.body);
 
 
-        const {PharmaEmail, password} = req.body;
+        const {PharmaEmail, PharmaPassword} = req.body;
 
         try{
             let pharmacy = await Pharmacy.findOne({PharmaEmail});
@@ -43,14 +43,14 @@ router.post('/', [
             //Check is  user exists
 
             if(!pharmacy){
-                res.status(400).json({errors: [{msg: 'Invalid Credentials'}]});
+                res.status(400).json({errors: [{msg: 'Invalid Email'}]});
             }
 
 
-            const isMatch = await bcrypt.compare(password,pharmacy.PharmaPassword);
+            const isMatch = await bcrypt.compare(PharmaPassword,pharmacy.PharmaPassword);
 
             if(!isMatch){
-                res.status(400).json({errors: [{msg: 'Invalid Credentials'}]});
+                res.status(400).json({errors: [{msg: 'Invalid Password'}]});
             }
 
 

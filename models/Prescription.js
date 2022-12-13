@@ -17,7 +17,7 @@ const PrescSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    presDosageMG:{
+    prescDosageMG:{
         type: Number,
         required: true
     },
