@@ -64,7 +64,7 @@ header{
 }
 
 #login-content{
-  display: none;
+
 }
 
 .inputBoxBlack{
@@ -256,7 +256,7 @@ a:active li.nav_bar_links_active{
 
 
 
-#wrapper{
+.wrapper{
   float: left;
   width: 100%;
   min-height: 100%;

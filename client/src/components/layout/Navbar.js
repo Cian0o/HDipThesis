@@ -30,7 +30,7 @@ const Navbar = () => {
                 </div>
                 <div className="login">
                     <a href="#">
-                        <img src="images/logintry2_75x75.png" onClick="loginCredentials()"/>
+                        <img src="../img/logintry2_75x75.png" onClick="loginCredentials()"/>
                     </a>
                     <div id="login-content">
                         <div className="arrow-up"/>
@@ -57,9 +57,20 @@ const Navbar = () => {
             </header>
 
 
+
+
         </Fragment>
 
     )
+}
+
+function loginCredentials() {
+    var x = document.getElementById("login-content");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
 }
 
 export default Navbar;
