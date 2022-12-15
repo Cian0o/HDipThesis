@@ -1,4 +1,5 @@
 import React, {Fragment} from 'react';
+import {Link} from 'react-router-dom';
 
 const Navbar = () => {
     return(
@@ -12,8 +13,8 @@ const Navbar = () => {
                             <i className="fa fa-caret-down"/>
                         </button>
                         <div className="dropdown-content">
-                            <a href="RegisterSurgery.html">Register Surgery</a>
-                            <a href="RegisterPharmacy.html">Register Pharmacy</a>
+                            <Link to="/registerDoc">Register Surgery</Link>
+                            <Link to="/registerPharma">Register Pharmacy</Link>
                         </div>
                     </div>
                 </div>
@@ -23,15 +24,15 @@ const Navbar = () => {
                         <i className="fa fa-caret-down"/>
                     </button>
                     <div className="dropdown-content">
-                        <a href="/FormProto.html">Submit Prescription</a>
-                        <a href="/FormProto.html">Retrieve Prescription</a>
-                        <a href="/FormProto.html">Amend Prescription</a>
+                        <Link to="/submit">Submit Prescription</Link>
+                        <Link to="/retrieve">Retrieve Prescription</Link>
+                        <Link to="/amend">Amend Prescription</Link>
                     </div>
                 </div>
                 <div className="login">
-                    <a href="#">
+                    <Link to="#">
                         <img src="../img/logintry2_75x75.png" onClick="loginCredentials()"/>
-                    </a>
+                    </Link>
                     <div id="login-content">
                         <div className="arrow-up"/>
                         <div id="loginDropDown">
@@ -42,11 +43,11 @@ const Navbar = () => {
                                 <p style={{fontWeight: "bold"}}>Password</p>
                                 <input className="inputBoxBlack" type="text" name="Password"/>
                                 <br/>
-                                <a href="#">
+                                <Link to="#">
                                     <p style={{fontWeight: "bold", fontSize: 14, color: "#000000"}}>
                                         Forgot Login Credentials?
                                     </p>
-                                </a>
+                                </Link>
                                 <p>
                                     <input className="buttonBlack" type="submit" defaultValue="Login"/>
                                 </p>
