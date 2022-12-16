@@ -1,14 +1,15 @@
 import React, {Fragment} from 'react';
 import {Link} from "react-router-dom";
 
-const Login = () => {
+
+const RegisterDoc = () => {
     return(
         <section className="landing">
             <div className="dark-overlay">
                 <div className="landing-inner">
                     <h1 className="lead">thÉireP</h1>
                     <p className="TESTER">
-                        EIRGH                    </p>
+                            EIRGH                    </p>
                     <div className="buttons">
                         <Link to="/register"><button
                             type="submit"
@@ -37,4 +38,4 @@ const Login = () => {
     );
 }
 
-export default Login;
+export default RegisterDoc;

@@ -1,7 +1,8 @@
 import React, {Fragment} from 'react';
 import {Link} from "react-router-dom";
 
-const Login = () => {
+
+const RegisterPharma = () => {
     return(
         <section className="landing">
             <div className="dark-overlay">
@@ -37,4 +38,4 @@ const Login = () => {
     );
 }
 
-export default Login;
+export default RegisterPharma;

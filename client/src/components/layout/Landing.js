@@ -12,22 +12,22 @@ const Landing = () => {
                         The new easy ePrescribing platform for patients, GPs, and Pharmacists!
                     </p>
                     <div className="buttons">
-                        <button
+                        <Link to="/whichreg"><button
                             type="submit"
                             value="Submit"
                             className="buttonGreenL"
                             style={{verticalAlign: "middle"}}
                         >
                             <span> Sign Up </span>
-                        </button>
-                        <button
+                        </button></Link>
+                        <Link to="/login"><button
                             type="submit"
                             value="Submit"
                             className="buttonGreenL"
                             style={{verticalAlign: "middle"}}
                         >
                             <span> Login </span>
-                        </button>
+                        </button></Link>
 
                     </div>
                 </div>

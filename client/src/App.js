@@ -5,8 +5,10 @@ import Navbar from "./components/layout/Navbar";
 import Landing from "./components/layout/Landing";
 import ViewingPane from "./components/layout/ViewingPane";
 import Footer from "./components/layout/Footer";
-import Register from "./components/auth/Register";
+import RegisterDoc from "./components/auth/RegisterDoc";
+import RegisterPharma from "./components/auth/RegisterPharma";
 import Login from "./components/auth/Login";
+import WhichReg from "./components/auth/WhichReg";
 
 
 import '././App.css';
@@ -15,10 +17,13 @@ const App = () => (
     <Router>
     <Fragment>
         <Navbar />
+
         <section className="container">
             <Routes>
                 <Route exact path="/" element={<Landing />} />
-                <Route path="register" element={<Register />} />
+                <Route path="whichreg" element={<WhichReg />} />
+                <Route path="registerdoc" element={<RegisterDoc />} />
+                <Route path="registerpharma" element={<RegisterPharma />} />
                 <Route path="login" element={<Login />} />
             </Routes>
         </section>
