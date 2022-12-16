@@ -13,8 +13,8 @@ const Navbar = () => {
                             <i className="fa fa-caret-down"/>
                         </button>
                         <div className="dropdown-content">
-                            <Link to="/registerDoc">Register Surgery</Link>
-                            <Link to="/registerPharma">Register Pharmacy</Link>
+                            <Link to="/register">Register Surgery</Link>
+                            <Link to="/register">Register Pharmacy</Link>
                         </div>
                     </div>
                 </div>

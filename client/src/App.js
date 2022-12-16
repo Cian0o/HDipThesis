@@ -15,12 +15,11 @@ const App = () => (
     <Router>
     <Fragment>
         <Navbar />
-        <Landing />
         <section className="container">
             <Routes>
-                <Route exact path="/" element={ViewingPane} />
-                <Route exact path="/register" component={Register} />
-                <Route exact path="/login" component={Login} />
+                <Route exact path="/" element={<Landing />} />
+                <Route path="register" element={<Register />} />
+                <Route path="login" element={<Login />} />
             </Routes>
         </section>
         <Footer />
