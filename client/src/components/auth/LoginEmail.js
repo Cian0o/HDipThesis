@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
 import {Link} from "react-router-dom";
 
-const Login = () => {
+const LoginEmail = () => {
     return(
         <section className="landing">
             <div className="dark-overlay">
@@ -14,29 +14,22 @@ const Login = () => {
                             <div className="form-group">
                                 <input
                                     type="email"
-                                    placeholder="Pharmacy Email"
+                                    placeholder="Email"
                                     name="PharmaEmail"
 
                                 />
 
                             </div>
-                            <div className="form-group">
-                                <input
-                                    type="password"
-                                    placeholder="Create Password"
-                                    name="PharmaPassword"
-
-                                />
-                            </div>
 
 
-                            <Link to="/registerdoc"><button
+
+                            <Link to="/loginpassword"><button
                                 type="submit"
                                 value="Submit"
                                 className="buttonGreenL"
                                 style={{verticalAlign: "middle"}}
                             >
-                                <span> Login </span>
+                                <span> Password </span>
                             </button></Link>                        </form>
                     </div>
                 </div>
@@ -48,4 +41,4 @@ const Login = () => {
     );
 }
 
-export default Login;
+export default LoginEmail;

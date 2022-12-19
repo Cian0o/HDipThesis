@@ -7,7 +7,8 @@ import ViewingPane from "./components/layout/ViewingPane";
 import Footer from "./components/layout/Footer";
 import RegisterDoc from "./components/auth/RegisterDoc";
 import RegisterPharma from "./components/auth/RegisterPharma";
-import Login from "./components/auth/Login";
+import LoginEmail from "./components/auth/LoginEmail";
+import LoginPassword from "./components/auth/LoginPassword";
 import WhichReg from "./components/auth/WhichReg";
 import Submit from "./components/layout/Submit";
 import Retrieve from "./components/layout/Retrieve";
@@ -27,7 +28,8 @@ const App = () => (
                 <Route path="whichreg" element={<WhichReg />} />
                 <Route path="registerdoc" element={<RegisterDoc />} />
                 <Route path="registerpharma" element={<RegisterPharma />} />
-                <Route path="login" element={<Login />} />
+                <Route path="loginemail" element={<LoginEmail />} />
+                <Route path="loginpassword" element={<LoginPassword />} />
                 <Route path="submit" element={<Submit />} />
                 <Route path="retrieve" element={<Retrieve />} />
                 <Route path="amend" element={<Amend />} />

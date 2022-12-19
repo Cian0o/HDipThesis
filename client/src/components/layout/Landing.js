@@ -20,7 +20,7 @@ const Landing = () => {
                         >
                             <span> Sign Up </span>
                         </button></Link>
-                        <Link to="/login"><button
+                        <Link to="/loginemail"><button
                             type="submit"
                             value="Submit"
                             className="buttonGreenL"
