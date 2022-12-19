@@ -9,6 +9,9 @@ import RegisterDoc from "./components/auth/RegisterDoc";
 import RegisterPharma from "./components/auth/RegisterPharma";
 import Login from "./components/auth/Login";
 import WhichReg from "./components/auth/WhichReg";
+import Submit from "./components/layout/Submit";
+import Retrieve from "./components/layout/Retrieve";
+import Amend from "./components/layout/Amend";
 
 
 import '././App.css';
@@ -25,6 +28,9 @@ const App = () => (
                 <Route path="registerdoc" element={<RegisterDoc />} />
                 <Route path="registerpharma" element={<RegisterPharma />} />
                 <Route path="login" element={<Login />} />
+                <Route path="submit" element={<Submit />} />
+                <Route path="retrieve" element={<Retrieve />} />
+                <Route path="amend" element={<Amend />} />
             </Routes>
         </section>
         <Footer />

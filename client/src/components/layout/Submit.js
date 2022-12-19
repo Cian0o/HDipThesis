@@ -2,7 +2,7 @@ import React, {Fragment} from 'react';
 import {Link} from "react-router-dom";
 
 
-const RegisterDoc = () => {
+const Submit = () => {
     return(
         <section className="landing">
             <div className="dark-overlay">
@@ -14,61 +14,46 @@ const RegisterDoc = () => {
                         <form className="form" >
                             <div className="form-group">
                                 <input
-                                    type="number"
-                                    placeholder="IMC Number"
-                                    name="IMCN"
-
-                                />
-                            </div>
-                            <div className="form-group">
-                                <input
-                                    type="email"
-                                    placeholder="Surgery Email"
-                                    name="DocEmail"
-
-                                />
-
-                            </div>
-                            <div className="form-group">
-                                <input
-                                    type="password"
-                                    placeholder="Create Password"
-                                    name="DocPassword"
-
-                                />
-                            </div>
-                            <div className="form-group">
-                                <input
-                                    type="password"
-                                    placeholder="Confirm Password"
-                                    name="DocPasswordConf"
+                                    type="text"
+                                    placeholder="Patient PPSN"
+                                    name="PPSN"
 
                                 />
                             </div>
                             <div className="form-group">
                                 <input
                                     type="text"
-                                    placeholder="Surgery/Doctor Name"
-                                    name="DocName"
+                                    placeholder="Patient Name"
+                                    name="patientName"
 
                                 />
+
                             </div>
                             <div className="form-group">
                                 <input
                                     type="number"
-                                    placeholder="Pharmacy Phone Number"
-                                    name="DocPhone"
+                                    placeholder="Prescription Frequency (Days)"
+                                    name="presFreQ"
 
                                 />
                             </div>
                             <div className="form-group">
                                 <input
                                     type="textarea"
-                                    placeholder="Pharmacy Address"
-                                    name="PharmaAddress"
+                                    placeholder="Prescription Contents"
+                                    name="prescContents"
 
                                 />
                             </div>
+                            <div className="form-group">
+                                <input
+                                    type="number"
+                                    placeholder="Dosage in MG"
+                                    name="prescDosageMG"
+
+                                />
+                            </div>
+
                             <Link to="/registerdoc"><button
                                 type="submit"
                                 value="Submit"
@@ -89,4 +74,4 @@ const RegisterDoc = () => {
     );
 }
 
-export default RegisterDoc;
+export default Submit;

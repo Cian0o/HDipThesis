@@ -1,30 +1,22 @@
 import React, {Fragment} from 'react';
 import {Link} from "react-router-dom";
 
-const Login = () => {
+
+const Retrieve = () => {
     return(
         <section className="landing">
             <div className="dark-overlay">
                 <div className="landing-inner">
                     <h1 className="lead">thÉireP</h1>
 
+
                     <div>
                         <form className="form" >
-
                             <div className="form-group">
                                 <input
-                                    type="email"
-                                    placeholder="Pharmacy Email"
-                                    name="PharmaEmail"
-
-                                />
-
-                            </div>
-                            <div className="form-group">
-                                <input
-                                    type="password"
-                                    placeholder="Create Password"
-                                    name="PharmaPassword"
+                                    type="text"
+                                    placeholder="Patient PPSN"
+                                    name="PPSN"
 
                                 />
                             </div>
@@ -36,9 +28,11 @@ const Login = () => {
                                 className="buttonGreenL"
                                 style={{verticalAlign: "middle"}}
                             >
-                                <span> Login </span>
+                                <span> Submit </span>
                             </button></Link>                        </form>
                     </div>
+
+
                 </div>
             </div>
 
@@ -48,4 +42,4 @@ const Login = () => {
     );
 }
 
-export default Login;
+export default Retrieve;

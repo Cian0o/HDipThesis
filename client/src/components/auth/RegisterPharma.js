@@ -8,8 +8,7 @@ const RegisterPharma = () => {
             <div className="dark-overlay">
                 <div className="landing-inner">
                     <h1 className="lead">thÉireP</h1>
-                    <p className="TESTER">
-                        EIRGH                    </p>
+
 
                     <div>
                         <form className="form" >
@@ -28,10 +27,7 @@ const RegisterPharma = () => {
                                     name="PharmaEmail"
 
                                 />
-                                <small className="form-text">
-                                    This site uses Gravatar so if you want a profile image, use a
-                                    Gravatar email
-                                </small>
+
                             </div>
                             <div className="form-group">
                                 <input
@@ -73,8 +69,14 @@ const RegisterPharma = () => {
 
                                 />
                             </div>
-                            <input type="submit" className="btn btn-primary" value="Register" />
-                        </form>
+                            <Link to="/registerdoc"><button
+                                type="submit"
+                                value="Submit"
+                                className="buttonGreenL"
+                                style={{verticalAlign: "middle"}}
+                            >
+                                <span> Submit </span>
+                            </button></Link>                        </form>
                     </div>
 
                 </div>
