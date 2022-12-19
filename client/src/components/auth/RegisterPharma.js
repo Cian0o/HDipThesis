@@ -1,8 +1,34 @@
-import React, {Fragment} from 'react';
+import React, {Fragment, useState} from 'react';
+import { Alert } from 'react-alert'
 import {Link} from "react-router-dom";
 
-
 const RegisterPharma = () => {
+
+    const [formData, setFormData] = useState({
+        PSIN: '',
+        PharmaEmail: '',
+        PharmaPassword: '',
+        PharmaPasswordConf: '',
+        PharmaName: '',
+        PharmaPhone: '',
+        PharmaAddress: '',
+
+    });
+
+    const {PSIN,PharmaEmail,PharmaPassword, PharmaPasswordConf, PharmaName, PharmaPhone, PharmaAddress } = formData;
+
+    const onChange = e => setFormData({...formData, [e.target.name]: e.target.value});
+
+    const onSubmit = async (e) => {
+        e.preventDefault();
+        if(PharmaPassword !==PharmaPasswordConf){
+            alert('Passwords to not match!');
+        }else{
+            console.log(formData);
+        }
+
+    }
+
     return(
         <section className="landing">
             <div className="dark-overlay">
@@ -11,12 +37,15 @@ const RegisterPharma = () => {
 
 
                     <div>
-                        <form className="form" >
+                        <form className="form" onSubmit={onSubmit}>
                             <div className="form-group">
                                 <input
                                     type="number"
                                     placeholder="PSI Number"
                                     name="PSIN"
+                                    value={PSIN}
+                                    onChange={onChange}
+                                    required
 
                                 />
                             </div>
@@ -25,6 +54,9 @@ const RegisterPharma = () => {
                                     type="email"
                                     placeholder="Pharmacy Email"
                                     name="PharmaEmail"
+                                    value={PharmaEmail}
+                                    onChange={onChange}
+                                    required
 
                                 />
 
@@ -34,6 +66,9 @@ const RegisterPharma = () => {
                                     type="password"
                                     placeholder="Create Password"
                                     name="PharmaPassword"
+                                    value={PharmaPassword}
+                                    onChange={onChange}
+                                    required
 
                                 />
                             </div>
@@ -42,6 +77,9 @@ const RegisterPharma = () => {
                                     type="password"
                                     placeholder="Confirm Password"
                                     name="PharmaPasswordConf"
+                                    value={PharmaPasswordConf}
+                                    onChange={onChange}
+                                    required
 
                                 />
                             </div>
@@ -50,6 +88,9 @@ const RegisterPharma = () => {
                                     type="text"
                                     placeholder="Pharmacy Name"
                                     name="PharmaName"
+                                    value={PharmaName}
+                                    onChange={onChange}
+                                    required
 
                                 />
                             </div>
@@ -58,6 +99,9 @@ const RegisterPharma = () => {
                                     type="number"
                                     placeholder="Pharmacy Phone Number"
                                     name="PharmaPhone"
+                                    value={PharmaPhone}
+                                    onChange={onChange}
+                                    required
 
                                 />
                             </div>
@@ -66,16 +110,19 @@ const RegisterPharma = () => {
                                     type="textarea"
                                     placeholder="Pharmacy Address"
                                     name="PharmaAddress"
+                                    value={PharmaAddress}
+                                    onChange={onChange}
+                                    required
 
                                 />
                             </div>
-                            <Link to="/registerdoc"><button
+                            <Link to="/"><button
                                 type="submit"
-                                value="Submit"
+                                value="Register"
                                 className="buttonGreenL"
                                 style={{verticalAlign: "middle"}}
                             >
-                                <span> Submit </span>
+                                <span> Register </span>
                             </button></Link>                        </form>
                     </div>
 

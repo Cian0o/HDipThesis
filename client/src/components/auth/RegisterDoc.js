@@ -1,8 +1,37 @@
-import React, {Fragment} from 'react';
+import React, {Fragment, useState} from 'react';
+import { Alert } from 'react-alert'
 import {Link} from "react-router-dom";
 
 
 const RegisterDoc = () => {
+    const [formData, setFormData] = useState({
+        IMCN: '',
+        DocEmail: '',
+        DocPassword: '',
+        DocPasswordConf: '',
+        DocName: '',
+        DocPhone: '',
+        DocAddress: '',
+
+    });
+
+    const {IMCN,DocEmail,DocPassword, DocPasswordConf, DocName, DocPhone, DocAddress } = formData;
+
+    const onChange = e => setFormData({...formData, [e.target.name]: e.target.value});
+
+    const onSubmit = async (e) => {
+        e.preventDefault();
+        if(DocPassword !==DocPasswordConf){
+            alert('Passwords to not match!');
+        }else{
+            console.log(formData);
+        }
+
+    }
+
+
+
+
     return(
         <section className="landing">
             <div className="dark-overlay">
@@ -11,12 +40,15 @@ const RegisterDoc = () => {
 
 
                     <div>
-                        <form className="form" >
+                        <form className="form" onSubmit={onSubmit}>
                             <div className="form-group">
                                 <input
                                     type="number"
                                     placeholder="IMC Number"
                                     name="IMCN"
+                                    value={IMCN}
+                                    onChange={onChange}
+                                    required
 
                                 />
                             </div>
@@ -25,6 +57,9 @@ const RegisterDoc = () => {
                                     type="email"
                                     placeholder="Surgery Email"
                                     name="DocEmail"
+                                    value={DocEmail}
+                                    onChange={onChange}
+                                    required
 
                                 />
 
@@ -34,6 +69,9 @@ const RegisterDoc = () => {
                                     type="password"
                                     placeholder="Create Password"
                                     name="DocPassword"
+                                    value={DocPassword}
+                                    onChange={onChange}
+                                    required
 
                                 />
                             </div>
@@ -42,6 +80,9 @@ const RegisterDoc = () => {
                                     type="password"
                                     placeholder="Confirm Password"
                                     name="DocPasswordConf"
+                                    value={DocPasswordConf}
+                                    onChange={onChange}
+                                    required
 
                                 />
                             </div>
@@ -50,32 +91,41 @@ const RegisterDoc = () => {
                                     type="text"
                                     placeholder="Surgery/Doctor Name"
                                     name="DocName"
+                                    value={DocName}
+                                    onChange={onChange}
+                                    required
 
                                 />
                             </div>
                             <div className="form-group">
                                 <input
                                     type="number"
-                                    placeholder="Pharmacy Phone Number"
+                                    placeholder="Surgery Phone Number"
                                     name="DocPhone"
+                                    value={DocPhone}
+                                    onChange={onChange}
+                                    required
 
                                 />
                             </div>
                             <div className="form-group">
                                 <input
                                     type="textarea"
-                                    placeholder="Pharmacy Address"
-                                    name="PharmaAddress"
+                                    placeholder="Surgery Address"
+                                    name="DocAddress"
+                                    value={DocAddress}
+                                    onChange={onChange}
+                                    required
 
                                 />
                             </div>
-                            <Link to="/registerdoc"><button
+                            <Link to="/"><button
                                 type="submit"
                                 value="Submit"
                                 className="buttonGreenL"
                                 style={{verticalAlign: "middle"}}
                             >
-                                <span> Submit </span>
+                                <span> Register </span>
                             </button></Link>                        </form>
                     </div>
 
