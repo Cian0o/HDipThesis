@@ -13,16 +13,22 @@ import WhichReg from "./components/auth/WhichReg";
 import Submit from "./components/layout/Submit";
 import Retrieve from "./components/layout/Retrieve";
 import Amend from "./components/layout/Amend";
+import Alert from "./components/layout/Alert";
+
+import {Provider} from 'react-redux';
+import store from './store';
 
 
 import '././App.css';
 
 const App = () => (
+    <Provider store={store}>
     <Router>
     <Fragment>
         <Navbar />
 
         <section className="container">
+            <Alert />
             <Routes>
                 <Route exact path="/" element={<Landing />} />
                 <Route path="whichreg" element={<WhichReg />} />
@@ -38,6 +44,7 @@ const App = () => (
         <Footer />
     </Fragment>
     </Router>
+    </Provider>
 );
 
 

@@ -1,8 +1,12 @@
 import React, {Fragment, useState} from 'react';
-import { Alert } from 'react-alert'
-import {Link} from "react-router-dom";
+import {connect} from 'react-redux';
+import axios from 'axios';
+import PropTypes from "prop-types";
+import {setAlert} from "../../actions/alert";
 
-const RegisterPharma = () => {
+
+
+const RegisterPharma = ({setAlert}) => {
 
     const [formData, setFormData] = useState({
         PSIN: '',
@@ -17,14 +21,37 @@ const RegisterPharma = () => {
 
     const {PSIN,PharmaEmail,PharmaPassword, PharmaPasswordConf, PharmaName, PharmaPhone, PharmaAddress } = formData;
 
-    const onChange = e => setFormData({...formData, [e.target.name]: e.target.value});
+    const onChange = (e) => setFormData({...formData, [e.target.name]: e.target.value});
 
     const onSubmit = async (e) => {
         e.preventDefault();
         if(PharmaPassword !==PharmaPasswordConf){
-            alert('Passwords to not match!');
+            setAlert('Passwords to not match!', 'danger');
         }else{
-            console.log(formData);
+            const newPharma = {
+                PSIN,
+                PharmaEmail,
+                PharmaPassword,
+                PharmaPasswordConf,
+                PharmaName,
+                PharmaPhone,
+                PharmaAddress
+            }
+            try{
+                const config = {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }
+                const body = JSON.stringify(newPharma);
+
+                const res = await axios.post('/api/pharmacies', body, config);
+                console.log(res.data);
+
+            }catch(err){
+                console.log(err.response.data);
+
+            }
         }
 
     }
@@ -116,14 +143,14 @@ const RegisterPharma = () => {
 
                                 />
                             </div>
-                            <Link to="/"><button
+                            <button
                                 type="submit"
                                 value="Register"
                                 className="buttonGreenL"
                                 style={{verticalAlign: "middle"}}
                             >
                                 <span> Register </span>
-                            </button></Link>                        </form>
+                            </button>                       </form>
                     </div>
 
                 </div>
@@ -135,4 +162,7 @@ const RegisterPharma = () => {
     );
 }
 
-export default RegisterPharma;
+RegisterPharma.propTypes = {
+    setAlert: PropTypes.func.isRequired,
+};
+export default connect(null, {setAlert})(RegisterPharma);

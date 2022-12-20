@@ -1,9 +1,11 @@
 import React, {Fragment, useState} from 'react';
+import {connect} from 'react-redux';
 import { Alert } from 'react-alert'
-import {Link} from "react-router-dom";
+import PropTypes from "prop-types";
+import {setAlert} from "../../actions/alert";
 
 
-const RegisterDoc = () => {
+const RegisterDoc = ({setAlert}) => {
     const [formData, setFormData] = useState({
         IMCN: '',
         DocEmail: '',
@@ -17,12 +19,12 @@ const RegisterDoc = () => {
 
     const {IMCN,DocEmail,DocPassword, DocPasswordConf, DocName, DocPhone, DocAddress } = formData;
 
-    const onChange = e => setFormData({...formData, [e.target.name]: e.target.value});
+    const onChange = (e) => setFormData({...formData, [e.target.name]: e.target.value});
 
     const onSubmit = async (e) => {
         e.preventDefault();
         if(DocPassword !==DocPasswordConf){
-            alert('Passwords to not match!');
+            setAlert('Passwords to not match!', 'danger');
         }else{
             console.log(formData);
         }
@@ -119,14 +121,14 @@ const RegisterDoc = () => {
 
                                 />
                             </div>
-                            <Link to="/"><button
+                            <button
                                 type="submit"
                                 value="Submit"
                                 className="buttonGreenL"
                                 style={{verticalAlign: "middle"}}
                             >
                                 <span> Register </span>
-                            </button></Link>                        </form>
+                            </button>                        </form>
                     </div>
 
 
@@ -139,4 +141,7 @@ const RegisterDoc = () => {
     );
 }
 
-export default RegisterDoc;
+RegisterDoc.propTypes = {
+    setAlert: PropTypes.func.isRequired,
+};
+export default connect(null, {setAlert})(RegisterDoc);
