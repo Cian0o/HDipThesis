@@ -2,6 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const path = require('path');
 const  connectDB = require('./config/db');
+const cors = require('cors');
 // var bodyParser = require('body-parser')
 const servePages = require('./routes/servePages.js')
 
@@ -16,6 +17,8 @@ connectDB();
 // }));
 
 app.use(express.json());
+
+app.use(cors());
 
 dotenv.config({path:'./config/config.env'});
 

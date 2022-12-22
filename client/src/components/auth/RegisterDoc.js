@@ -3,9 +3,10 @@ import {connect} from 'react-redux';
 import { Alert } from 'react-alert'
 import PropTypes from "prop-types";
 import {setAlert} from "../../actions/alert";
+import {registerDoc} from "../../actions/auth";
 
 
-const RegisterDoc = ({setAlert}) => {
+const RegisterDoc = ({setAlert, registerDoc}) => {
     const [formData, setFormData] = useState({
         IMCN: '',
         DocEmail: '',
@@ -26,7 +27,7 @@ const RegisterDoc = ({setAlert}) => {
         if(DocPassword !==DocPasswordConf){
             setAlert('Passwords to not match!', 'danger');
         }else{
-            console.log(formData);
+            registerDoc({IMCN,DocEmail,DocPassword, DocPasswordConf, DocName, DocPhone, DocAddress});
         }
 
     }
@@ -143,5 +144,6 @@ const RegisterDoc = ({setAlert}) => {
 
 RegisterDoc.propTypes = {
     setAlert: PropTypes.func.isRequired,
+    registerDoc: PropTypes.func.isRequired
 };
-export default connect(null, {setAlert})(RegisterDoc);
+export default connect(null, {setAlert, registerDoc})(RegisterDoc);

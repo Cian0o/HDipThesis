@@ -1,12 +1,12 @@
 import React, {Fragment, useState} from 'react';
 import {connect} from 'react-redux';
-import axios from 'axios';
 import PropTypes from "prop-types";
 import {setAlert} from "../../actions/alert";
+import {registerPharma} from "../../actions/auth";
 
 
 
-const RegisterPharma = ({setAlert}) => {
+const RegisterPharma = ({setAlert, registerPharma}) => {
 
     const [formData, setFormData] = useState({
         PSIN: '',
@@ -25,10 +25,10 @@ const RegisterPharma = ({setAlert}) => {
 
     const onSubmit = async (e) => {
         e.preventDefault();
-        if(PharmaPassword !==PharmaPasswordConf){
+        if (PharmaPassword !== PharmaPasswordConf) {
             setAlert('Passwords to not match!', 'danger');
-        }else{
-            const newPharma = {
+        } else {
+            registerPharma({
                 PSIN,
                 PharmaEmail,
                 PharmaPassword,
@@ -36,25 +36,10 @@ const RegisterPharma = ({setAlert}) => {
                 PharmaName,
                 PharmaPhone,
                 PharmaAddress
-            }
-            try{
-                const config = {
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                }
-                const body = JSON.stringify(newPharma);
-
-                const res = await axios.post('/api/pharmacies', body, config);
-                console.log(res.data);
-
-            }catch(err){
-                console.log(err.response.data);
-
-            }
+            });
         }
-
     }
+
 
     return(
         <section className="landing">
@@ -164,5 +149,6 @@ const RegisterPharma = ({setAlert}) => {
 
 RegisterPharma.propTypes = {
     setAlert: PropTypes.func.isRequired,
+    registerPharma: PropTypes.func.isRequired
 };
-export default connect(null, {setAlert})(RegisterPharma);
+export default connect(null, {setAlert, registerPharma})(RegisterPharma);
