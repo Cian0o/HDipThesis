@@ -12,10 +12,10 @@ const prescMiddle = require('../../middleware/prescMiddle')
 
 // route is: GET api/prescription
 // Description: Retrieve Prescription Route
-// Access: Private
+// Access: Private prescMiddle to be readded
 
 
-router.get('/', prescMiddle, async (req, res) => {
+router.get('/', async (req, res) => {
     try{
         const PPSN = req.body;
         const prescription = await Prescription.find(PPSN);

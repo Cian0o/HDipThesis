@@ -12,6 +12,7 @@ import LoginPassword from "./components/auth/LoginPassword";
 import WhichReg from "./components/auth/WhichReg";
 import Submit from "./components/layout/Submit";
 import Retrieve from "./components/layout/Retrieve";
+import ViewPresc from "./components/layout/ViewPresc";
 import Amend from "./components/layout/Amend";
 import Alert from "./components/layout/Alert";
 
@@ -38,6 +39,7 @@ const App = () => (
                 <Route path="loginpassword" element={<LoginPassword />} />
                 <Route path="submit" element={<Submit />} />
                 <Route path="retrieve" element={<Retrieve />} />
+                <Route path="viewpresc" element={<ViewPresc />} />
                 <Route path="amend" element={<Amend />} />
             </Routes>
         </section>
