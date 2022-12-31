@@ -37,7 +37,7 @@ const Navbar = () => {
                         <div className="arrow-up"/>
                         <div id="loginDropDown">
                             <form className="login-form">
-                                <p style={{fontWeight: "bold"}}>LoginEmail Email</p>
+                                <p style={{fontWeight: "bold"}}>Login Email</p>
                                 <input className="inputBoxBlack" type="email" name="LoginEmail"/>
                                 <br/>
                                 <p style={{fontWeight: "bold"}}>Password</p>
@@ -45,11 +45,11 @@ const Navbar = () => {
                                 <br/>
                                 <Link to="#">
                                     <p style={{fontWeight: "bold", fontSize: 14, color: "#000000"}}>
-                                        Forgot LoginEmail Credentials?
+                                        Forgot Login Credentials?
                                     </p>
                                 </Link>
                                 <p>
-                                    <input className="buttonBlack" type="submit" defaultValue="LoginEmail"/>
+                                    <input className="buttonBlack" type="submit" defaultValue="Login"/>
                                 </p>
                             </form>
                         </div>

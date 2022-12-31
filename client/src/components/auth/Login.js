@@ -1,7 +1,12 @@
 import React, {Fragment, useState} from 'react';
+import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
+import {loginDoc} from "../../actions/auth";
+import {loginPharma} from "../../actions/auth";
+
 import {Link} from "react-router-dom";
 
-const LoginEmail = () => {
+const Login = () => {
     return(
         <section className="landing">
             <div className="dark-overlay">
@@ -21,16 +26,25 @@ const LoginEmail = () => {
 
                             </div>
 
+                            <div className="form-group">
+                                <input
+                                    type="password"
+                                    placeholder="Password"
+                                    name="PharmaPassword"
+
+                                />
+                            </div>
 
 
-                            <Link to="/loginpassword"><button
+
+                            <button
                                 type="submit"
                                 value="Submit"
                                 className="buttonGreenL"
                                 style={{verticalAlign: "middle"}}
                             >
-                                <span> Password </span>
-                            </button></Link>                        </form>
+                                <span> Login </span>
+                            </button>                      </form>
                     </div>
                 </div>
             </div>
@@ -41,4 +55,4 @@ const LoginEmail = () => {
     );
 }
 
-export default LoginEmail;
+export default Login;

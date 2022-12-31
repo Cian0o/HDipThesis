@@ -15,7 +15,7 @@ const prescMiddle = require('../../middleware/prescMiddle')
 // Access: Private prescMiddle to be readded
 
 
-router.get('/', async (req, res) => {
+router.get('/', prescMiddle, async (req, res) => {
     try{
         const PPSN = req.body;
         const prescription = await Prescription.find(PPSN);

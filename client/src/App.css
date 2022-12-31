@@ -110,6 +110,7 @@ button {
 }
 
 #login-content{
+  display: none;
 
 }
 
@@ -244,12 +245,12 @@ button {
 
 #logInFormContainer{
   float: right;
-  display:block
+  display:none
 }
 
 #logInForm{
   float: right;
-  display:block
+  display:none
 }
 li.nav_bar_links_active {
   display: inline;
