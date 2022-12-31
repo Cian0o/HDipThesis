@@ -1,12 +1,28 @@
 import React, {Fragment, useState} from 'react';
+import { Link, Navigate } from 'react-router-dom';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {loginDoc} from "../../actions/auth";
-import {loginPharma} from "../../actions/auth";
 
-import {Link} from "react-router-dom";
 
-const Login = () => {
+const LoginDoc = ({loginDoc}) => {
+
+    // {loginPharma}) => {
+    const [formData, setFormData] = useState({
+        DocEmail: '',
+        DocPassword: ''
+    });
+
+    const { DocEmail, DocPassword } = formData;
+
+    const handleChange = (e) =>
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+        loginDoc(DocEmail, DocPassword);
+    };
+
     return(
         <section className="landing">
             <div className="dark-overlay">
@@ -14,13 +30,16 @@ const Login = () => {
                     <h1 className="lead">thÉireP</h1>
 
                     <div>
-                        <form className="form" >
+                        <form className="form" onSubmit={onSubmit}>
 
                             <div className="form-group">
                                 <input
                                     type="email"
                                     placeholder="Email"
-                                    name="PharmaEmail"
+                                    name="DocEmail"
+                                    value={DocEmail}
+                                    onChange={handleChange}
+                                    required
 
                                 />
 
@@ -30,7 +49,10 @@ const Login = () => {
                                 <input
                                     type="password"
                                     placeholder="Password"
-                                    name="PharmaPassword"
+                                    name="DocPassword"
+                                    value={DocPassword}
+                                    onChange={handleChange}
+                                    required
 
                                 />
                             </div>
@@ -55,4 +77,8 @@ const Login = () => {
     );
 }
 
-export default Login;
+LoginDoc.propTypes = {
+    loginDoc: PropTypes.func.isRequired
+}
+
+export default connect(null, {loginDoc})(LoginDoc);

@@ -155,23 +155,20 @@ export const submitPresc = (formData) =>
 
 
 //     Login  User
-export const loginDoc = (formData) =>
-    async (dispatch) => {
-        const config = {
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }
-        // const body = JSON.stringify({IMCN,DocEmail,DocPassword, DocPasswordConf, DocName, DocPhone, DocAddress});
+export const loginDoc = (DocEmail, DocPassword) => async (dispatch) => {
+        const body = {DocEmail, DocPassword};
+
+
 
         try {
-            const res = await api.post('/surgeries', formData);
+            const res = await api.post('/surgeries', body);
 
 
             dispatch({
                 type: LOGIN_SUCCESS,
                 payload: res.data
             });
+            dispatch(loadUser());
         } catch(err){
             const errors = err.response.data.errors;
 
@@ -187,34 +184,31 @@ export const loginDoc = (formData) =>
         }
     }
 
-export const loginPharma = (formData) =>
-    async (dispatch) => {
-        const config = {
-            headers: {
-                'Content-Type': 'application/json'
-            }
+export const loginPharma = (PharmaEmail, PharmaPassword) => async (dispatch) => {
+    const body = {PharmaEmail, PharmaPassword};
+
+
+
+    try {
+        const res = await api.post('/pharmacies', body);
+
+
+        dispatch({
+            type: LOGIN_SUCCESS,
+            payload: res.data
+        });
+        dispatch(loadUser());
+    } catch(err){
+        const errors = err.response.data.errors;
+
+        if(errors){
+            errors.forEach(error => dispatch(setAlert(error.msg, 'danger')));
         }
-        // const body = JSON.stringify({IMCN,DocEmail,DocPassword, DocPasswordConf, DocName, DocPhone, DocAddress});
 
-        try {
-            const res = await api.post('/surgeries', formData);
+        dispatch({
+            type: LOGIN_FAIL,
 
+        })
 
-            dispatch({
-                type: LOGIN_SUCCESS,
-                payload: res.data
-            });
-        } catch(err){
-            const errors = err.response.data.errors;
-
-            if(errors){
-                errors.forEach(error => dispatch(setAlert(error.msg, 'danger')));
-            }
-
-            dispatch({
-                type: LOGIN_FAIL,
-
-            })
-
-        }
     }
+}

@@ -5,11 +5,13 @@ import Navbar from "./components/layout/Navbar";
 import Landing from "./components/layout/Landing";
 import ViewingPane from "./components/layout/ViewingPane";
 import Footer from "./components/layout/Footer";
+import WhichReg from "./components/auth/WhichReg";
 import RegisterDoc from "./components/auth/RegisterDoc";
 import RegisterPharma from "./components/auth/RegisterPharma";
-import Login from "./components/auth/Login";
+import WhichLogin from "./components/auth/WhichLogin";
+import LoginPharma from "./components/auth/LoginPharma";
+import LoginDoc from "./components/auth/LoginDoc";
 import LoginPassword from "./components/auth/LoginPassword";
-import WhichReg from "./components/auth/WhichReg";
 import Submit from "./components/layout/Submit";
 import Retrieve from "./components/layout/Retrieve";
 import ViewPresc from "./components/layout/ViewPresc";
@@ -57,7 +59,9 @@ const App = () => {
                             <Route path="whichreg" element={<WhichReg />} />
                             <Route path="registerdoc" element={<RegisterDoc />} />
                             <Route path="registerpharma" element={<RegisterPharma />} />
-                            <Route path="login" element={<Login />} />
+                            <Route path="whichlogin" element={<WhichLogin />} />
+                            <Route path="logindoc" element={<LoginDoc />} />
+                            <Route path="loginpharma" element={<LoginPharma />} />
                             {/*<Route path="loginpassword" element={<LoginPassword />} />*/}
                             <Route path="submit" element={<Submit />} />
                             <Route path="retrieve" element={<Retrieve />} />

@@ -1,32 +1,30 @@
-import React from 'react';
-import {Link, Navigate} from 'react-router-dom';
+import React, {Fragment} from 'react';
+import {Link} from "react-router-dom";
 
-
-const Landing = () => {
+const WhichReg = () => {
     return(
         <section className="landing">
             <div className="dark-overlay">
                 <div className="landing-inner">
                     <h1 className="lead">thÉireP</h1>
-                    <p className="lead">
-                        The new easy ePrescribing platform for patients, GPs, and Pharmacists!
-                    </p>
+                    <p className="TESTER">
+                        Are you Signing in as a Doctor or Pharmacy? </p>
                     <div className="buttons">
-                        <Link to="/whichreg"><button
+                        <Link to="/logindoc"><button
                             type="submit"
                             value="Submit"
                             className="buttonGreenL"
                             style={{verticalAlign: "middle"}}
                         >
-                            <span> Sign Up </span>
+                            <span> Doctor </span>
                         </button></Link>
-                        <Link to="/whichlogin"><button
+                        <Link to="/loginpharma"><button
                             type="submit"
                             value="Submit"
                             className="buttonGreenL"
                             style={{verticalAlign: "middle"}}
                         >
-                            <span> Login </span>
+                            <span> Pharmacy </span>
                         </button></Link>
 
                     </div>
@@ -39,4 +37,4 @@ const Landing = () => {
     );
 }
 
-export default Landing;
+export default WhichReg;
