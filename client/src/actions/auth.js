@@ -13,12 +13,34 @@ import {
 
 import setAuthToken from "../utils/setAuthToken";
 
-export const loadUser = () => async (disptach) => {
+export const loadUserDoc = () => async (disptach) => {
     if(localStorage.token) {
         setAuthToken(localStorage.token);
     }
     try {
-        const res = await api.get('/auth');
+        const res = await api.get('/surgeries');
+
+        disptach({
+            type: USER_LOADED,
+            payload: res.data
+        });
+
+    }
+    catch(err){
+
+        disptach({
+            type: AUTH_ERROR
+        });
+
+    }
+}
+
+export const loadUserPharma = () => async (disptach) => {
+    if(localStorage.token) {
+        setAuthToken(localStorage.token);
+    }
+    try {
+        const res = await api.get('/pharmacies');
 
         disptach({
             type: USER_LOADED,
@@ -168,7 +190,7 @@ export const loginDoc = (DocEmail, DocPassword) => async (dispatch) => {
                 type: LOGIN_SUCCESS,
                 payload: res.data
             });
-            dispatch(loadUser());
+            dispatch(loadUserDoc());
         } catch(err){
             const errors = err.response.data.errors;
 
@@ -197,7 +219,7 @@ export const loginPharma = (PharmaEmail, PharmaPassword) => async (dispatch) => 
             type: LOGIN_SUCCESS,
             payload: res.data
         });
-        dispatch(loadUser());
+        dispatch(loadUserPharma());
     } catch(err){
         const errors = err.response.data.errors;
 

@@ -17,7 +17,9 @@ import Retrieve from "./components/layout/Retrieve";
 import ViewPresc from "./components/layout/ViewPresc";
 import Amend from "./components/layout/Amend";
 import Alert from "./components/layout/Alert";
-import { loadUser } from "./actions/auth";
+import { loadUserDoc } from "./actions/auth";
+import { loadUserPharma } from "./actions/auth";
+
 import {Provider} from 'react-redux';
 import store from './store';
 
@@ -43,7 +45,7 @@ const App = () => {
         if(localStorage.token){
             setAuthToken(localStorage.token)}
 
-        store.dispatch(loadUser()); }, []);
+        store.dispatch(loadUserDoc(), loadUserPharma()); }, []);
 
 
     return(
