@@ -8,12 +8,12 @@ const mongoose = require('mongoose');
 const router = express.Router();
 
 const  Surgery = require('../../models/Surgery')
-// route is: GET api/auth
-// Description: Test Route
-// Access: Public
+// route is: POST api/surgeries
+// Description: Dev Route
+// Access: Public (for registering)
 router.post('/', [
         // check('IMCN', 'Please Enter a valid IMC Number').isNumeric().not().isEmpty()
-        , check('DocEmail', 'Please Enter an Email').isEmail().not().isEmpty(),
+         check('DocEmail', 'Please Enter an Email').isEmail().not().isEmpty(),
         check('DocPassword', 'Password Should Contain at  least  8 characters').isLength({min: 8})],
     async (req, res) => {
         const errors = validationResult(req);

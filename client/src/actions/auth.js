@@ -18,7 +18,7 @@ export const loadUserDoc = () => async (disptach) => {
         setAuthToken(localStorage.token);
     }
     try {
-        const res = await api.get('/surgeries');
+        const res = await api.get('/docauth');
 
         disptach({
             type: USER_LOADED,
@@ -40,7 +40,7 @@ export const loadUserPharma = () => async (disptach) => {
         setAuthToken(localStorage.token);
     }
     try {
-        const res = await api.get('/pharmacies');
+        const res = await api.get('/pharmaauth');
 
         disptach({
             type: USER_LOADED,

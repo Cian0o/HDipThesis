@@ -1,5 +1,5 @@
 const express = require('express');
-const docauth = require('../../middleware/docauth')
+const docauthMware = require('../../middleware/docauthMware')
 const Surgery = require('../../models/Surgery');
 const {check, validationResult} = require("express-validator");
 const bcrypt = require("bcryptjs");
@@ -11,7 +11,7 @@ const router = express.Router();
 // route is: GET api/docauth
 // Description: Test Route
 // Access: Public
-router.get('/', docauth, async (req, res) => {
+router.get('/', docauthMware, async (req, res) => {
     try{
         const surgery = await Surgery.findById(req.surgery.id).select('-DocPassword')
         res.json(surgery);

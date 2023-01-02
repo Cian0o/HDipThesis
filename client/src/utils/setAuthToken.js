@@ -1,12 +1,13 @@
 import api from './api';
 
-const setAuthToken = token => {
-    if(token){
-        api.default.headers.common['x-auth-token'] = token;
+const setAuthToken = (token) => {
+    if (token) {
+        api.defaults.headers.common['x-auth-token'] = token;
+        localStorage.setItem('token', token);
+    } else {
+        delete api.defaults.headers.common['x-auth-token'];
+        localStorage.removeItem('token');
     }
-    else {
-        delete api.headers.common['x-auth-token'];
-    }
-}
+};
 
 export default setAuthToken;

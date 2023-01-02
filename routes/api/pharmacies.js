@@ -7,9 +7,9 @@ const config = require('config');
 const router = express.Router();
 
 const  Pharmacy = require('../../models/Pharmacy')
-// route is: GET api/auth
+// route is: POST api/pharmacies
 // Description: Test Route
-// Access: Public
+// Access: Public (for registering)
 router.post('/', [
         check('PSIN', 'Please Enter a valid PSI Number').isNumeric().not().isEmpty()
         , check('PharmaEmail', 'Please Enter an Email').isEmail().not().isEmpty(),
