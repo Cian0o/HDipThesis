@@ -36,6 +36,26 @@ const LoginPharma = ({loginPharma, isAuthenticated}) => {
                     <h1 className="lead">thÉireP</h1>
 
                     <div>
+
+                        <div style={{ width: "100%", textAlign: "center" }}>
+                            <div className="tx--social" style={{ margin: "auto", maxWidth: 600 }}>
+                                <a
+                                    className="social-button"
+                                    // style={{ display: "none" }}
+                                    id="google-connect"
+                                >
+                                    <span>Google</span>
+                                </a>
+                                <a
+                                    className="social-button"
+                                    // style={{ display: "none" }}
+                                    id="linkedin-connect"
+                                >
+                                    <span>LinkedIn</span>
+                                </a>
+
+                            </div>
+                        </div>
                         <form className="form" onSubmit={onSubmit}>
 
                             <div className="form-group">

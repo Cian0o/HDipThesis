@@ -21,6 +21,8 @@
     "gravatar": "^1.8.2",
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^6.7.3",
+    "passport": "^0.6.0",
+    "passport-google-oidc": "^0.1.0",
     "react": "^18.2.0",
     "react-alert": "^7.0.3",
     "request": "^2.88.2"

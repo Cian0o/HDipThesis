@@ -16,6 +16,8 @@ export const RETRIEVE_PRESCRIPTION =  'RETRIEVE_PRESCRIPTION ';
 export const VIEW_PRESCRIPTION =  'VIEW_PRESCRIPTION ';
 
 
-export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 
-export const LOGIN_FAIL = 'LOGIN_FAIL'
+export const LOGIN_FAIL = 'LOGIN_FAIL';
+
+export const LOGOUT = 'LOGOUT';

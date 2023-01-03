@@ -6,6 +6,8 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const config = require("config");
 const router = express.Router();
+const passport = require('passport');
+const GoogleStrategy = require('passport-google-oidc');
 
 // route is: GET api/docauth
 // Description: Test Route
@@ -19,6 +21,8 @@ router.get('/', pharmaauthMware, async (req, res) => {
         res.status(500).send('Server Error');
     }
 });
+
+router.get('/login/federated/google', passport.authenticate('google'));
 
 //Route: POST to api/auth
 //Authenticates users and gets token
