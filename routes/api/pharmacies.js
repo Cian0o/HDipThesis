@@ -11,8 +11,8 @@ const  Pharmacy = require('../../models/Pharmacy')
 // Description: Test Route
 // Access: Public (for registering)
 router.post('/', [
-        check('PSIN', 'Please Enter a valid PSI Number').isNumeric().not().isEmpty()
-        , check('PharmaEmail', 'Please Enter an Email').isEmail().not().isEmpty(),
+        check('PSIN', 'Please Enter a valid PSI Number').isNumeric().not().isEmpty(),
+         check('PharmaEmail', 'Please Enter an Email').isEmail().not().isEmpty(),
         check('PharmaPassword', 'Password Should Contain at  least  8 characters').isLength({min: 8})],
     async (req, res) => {
         const errors = validationResult(req);

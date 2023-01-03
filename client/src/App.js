@@ -45,7 +45,7 @@ const App = () => {
         if(localStorage.token){
             setAuthToken(localStorage.token)}
 
-        store.dispatch(loadUserDoc(), loadUserPharma()); }, []);
+        store.dispatch(loadUserDoc()); }, []);
 
 
     return(

@@ -12,7 +12,7 @@ const  Surgery = require('../../models/Surgery')
 // Description: Dev Route
 // Access: Public (for registering)
 router.post('/', [
-        // check('IMCN', 'Please Enter a valid IMC Number').isNumeric().not().isEmpty()
+        check('IMCN', 'Please Enter a valid IMC Number').isNumeric().not().isEmpty(),
          check('DocEmail', 'Please Enter an Email').isEmail().not().isEmpty(),
         check('DocPassword', 'Password Should Contain at  least  8 characters').isLength({min: 8})],
     async (req, res) => {

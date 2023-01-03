@@ -183,7 +183,7 @@ export const loginDoc = (DocEmail, DocPassword) => async (dispatch) => {
 
 
         try {
-            const res = await api.post('/surgeries', body);
+            const res = await api.post('/docauth', body);
 
 
             dispatch({
@@ -212,7 +212,7 @@ export const loginPharma = (PharmaEmail, PharmaPassword) => async (dispatch) => 
 
 
     try {
-        const res = await api.post('/pharmacies', body);
+        const res = await api.post('/pharmaauth', body);
 
 
         dispatch({
