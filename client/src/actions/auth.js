@@ -91,6 +91,7 @@ export const registerDoc = (formData) =>
                 type: REGISTER_SUCCESS,
                 payload: res.data
             });
+            dispatch(loadUserDoc());
         } catch(err){
             const errors = err.response.data.errors;
 
@@ -129,6 +130,7 @@ export const registerPharma = (formData) =>
                 type: REGISTER_SUCCESS,
                 payload: res.data
             });
+            dispatch(loadUserPharma());
         } catch (err) {
             const errors = err.response.data.errors;
 
