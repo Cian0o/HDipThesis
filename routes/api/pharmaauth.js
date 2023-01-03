@@ -24,9 +24,10 @@ router.get('/', pharmaauthMware, async (req, res) => {
 //Authenticates users and gets token
 //Access: Public
 
-router.post('/', [
-        check('email', 'Please Enter a registered Email').isEmail().not().isEmpty(),
-        check('password', 'Please enter a valid password').exists()],
+router.post('/',
+    // [
+        // check('email', 'Please Enter a registered Email').isEmail().not().isEmpty(),
+        // check('password', 'Please enter a valid password').exists()],
     async (req, res) => {
         const errors = validationResult(req);
         if(!errors.isEmpty()){
