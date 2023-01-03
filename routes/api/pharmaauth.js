@@ -44,14 +44,14 @@ router.post('/',
             //Check is  user exists
 
             if(!pharmacy){
-                res.status(400).json({errors: [{msg: 'Invalid Email'}]});
+                res.status(400).json({errors: [{msg: 'Invalid Credentials'}]});
             }
 
 
             const isMatch = await bcrypt.compare(PharmaPassword,pharmacy.PharmaPassword);
 
             if(!isMatch){
-                res.status(400).json({errors: [{msg: 'Invalid Password'}]});
+                res.status(400).json({errors: [{msg: 'Invalid Credentials'}]});
             }
 
 

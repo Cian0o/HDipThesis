@@ -3,9 +3,9 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {loginPharma} from "../../actions/auth";
 
-import {Link} from "react-router-dom";
+import {Link, Navigate} from "react-router-dom";
 
-const LoginPharma = ({loginPharma}) => {
+const LoginPharma = ({loginPharma, isAuthenticated}) => {
 
     // {loginPharma}) => {
         const [formData, setFormData] = useState({
@@ -22,6 +22,12 @@ const LoginPharma = ({loginPharma}) => {
             e.preventDefault();
             loginPharma(PharmaEmail, PharmaPassword);
         };
+
+        if(isAuthenticated){
+            return(
+                <Navigate to="/pharmadash" />
+            )
+        }
 
     return(
         <section className="landing">
@@ -78,7 +84,12 @@ const LoginPharma = ({loginPharma}) => {
 }
 
 LoginPharma.propTypes = {
-    loginPharma: PropTypes.func.isRequired
+    loginPharma: PropTypes.func.isRequired,
+    isAuthenticated: PropTypes.bool
 }
 
-export default connect(null, {loginPharma})(LoginPharma);
+const mapStateToProps = (state) => ({
+    isAuthenticated: state.auth.isAuthenticated
+});
+
+export default connect(mapStateToProps, {loginPharma})(LoginPharma);

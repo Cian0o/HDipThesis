@@ -6,6 +6,8 @@ import Landing from "./components/layout/Landing";
 import ViewingPane from "./components/layout/ViewingPane";
 import Footer from "./components/layout/Footer";
 import WhichReg from "./components/auth/WhichReg";
+import DocDash from "./components/layout/docdash";
+import PharmaDash from "./components/layout/pharmadash";
 import RegisterDoc from "./components/auth/RegisterDoc";
 import RegisterPharma from "./components/auth/RegisterPharma";
 import WhichLogin from "./components/auth/WhichLogin";
@@ -45,10 +47,12 @@ const App = () => {
         if(localStorage.token){
             setAuthToken(localStorage.token)}
 
-        store.dispatch(loadUserDoc()); }, []);
+        store.dispatch(loadUserDoc(), loadUserPharma()); }, [])
 
 
-    return(
+
+
+return(
         <Provider store={store}>
             <Router>
                 <Fragment>
@@ -58,6 +62,8 @@ const App = () => {
                         <Alert />
                         <Routes>
                             <Route exact path="/" element={<Landing />} />
+                            <Route path="docdash" element={<DocDash />} />
+                            <Route path="pharmadash" element={<PharmaDash />} />
                             <Route path="whichreg" element={<WhichReg />} />
                             <Route path="registerdoc" element={<RegisterDoc />} />
                             <Route path="registerpharma" element={<RegisterPharma />} />

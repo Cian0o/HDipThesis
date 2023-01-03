@@ -1,11 +1,11 @@
 import React, {Fragment, useState} from 'react';
-import { Link, Navigate } from 'react-router-dom';
+import {Link, Navigate} from 'react-router-dom';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {loginDoc} from "../../actions/auth";
 
 
-const LoginDoc = ({loginDoc}) => {
+const LoginDoc = ({loginDoc, isAuthenticated}) => {
 
     // {loginPharma}) => {
     const [formData, setFormData] = useState({
@@ -22,6 +22,12 @@ const LoginDoc = ({loginDoc}) => {
         e.preventDefault();
         loginDoc(DocEmail, DocPassword);
     };
+
+    if(isAuthenticated){
+        return(
+            <Navigate to="/docdash" />
+        )
+    }
 
     return(
         <section className="landing">
@@ -78,7 +84,12 @@ const LoginDoc = ({loginDoc}) => {
 }
 
 LoginDoc.propTypes = {
-    loginDoc: PropTypes.func.isRequired
+    loginDoc: PropTypes.func.isRequired,
+    isAuthenticated: PropTypes.bool
 }
 
-export default connect(null, {loginDoc})(LoginDoc);
+const mapStateToProps = (state) => ({
+    isAuthenticated: state.auth.isAuthenticated
+});
+
+export default connect(mapStateToProps, {loginDoc})(LoginDoc);

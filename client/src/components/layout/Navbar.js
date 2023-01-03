@@ -1,6 +1,8 @@
 import React, {Fragment} from 'react';
 import {Link} from 'react-router-dom';
 
+import logo from './logo3.png';
+
 const Navbar = () => {
     return(
         <Fragment>
@@ -28,6 +30,9 @@ const Navbar = () => {
                         <Link to="/retrieve">Retrieve Prescription</Link>
                         <Link to="/amend">Amend Prescription</Link>
                     </div>
+                </div>
+                <div className="logoPic">
+                  <Link to='/'>  <img src={logo}/></Link>
                 </div>
                 <div className="login">
                     <Link to="#">

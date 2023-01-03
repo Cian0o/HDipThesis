@@ -76,12 +76,7 @@ export const loadUserPharma = () => async (disptach) => {
 
 export const registerDoc = (formData) =>
     async (dispatch) => {
-        const config = {
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }
-        // const body = JSON.stringify({IMCN,DocEmail,DocPassword, DocPasswordConf, DocName, DocPhone, DocAddress});
+
 
         try {
             const res = await api.post('/surgeries', formData);
@@ -109,20 +104,6 @@ export const registerDoc = (formData) =>
 
 export const registerPharma = (formData) =>
     async dispatch => {
-        const config = {
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }
-        // const body = JSON.stringify({
-        //     PSIN,
-        //     PharmaEmail,
-        //     PharmaPassword,
-        //     PharmaPasswordConf,
-        //     PharmaName,
-        //     PharmaPhone,
-        //     PharmaAddress
-        // });
 
         try {
             const res = await api.post('/pharmacies', formData);

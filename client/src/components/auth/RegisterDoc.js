@@ -1,12 +1,13 @@
 import React, {Fragment, useState} from 'react';
 import {connect} from 'react-redux';
+import {Link, Navigate} from 'react-router-dom';
 import { Alert } from 'react-alert'
 import PropTypes from "prop-types";
 import {setAlert} from "../../actions/alert";
 import {registerDoc} from "../../actions/auth";
 
 
-const RegisterDoc = ({setAlert, registerDoc}) => {
+const RegisterDoc = ({setAlert, registerDoc, isAuthenticated}) => {
     const [formData, setFormData] = useState({
         IMCN: '',
         DocEmail: '',
@@ -32,7 +33,11 @@ const RegisterDoc = ({setAlert, registerDoc}) => {
 
     }
 
-
+    if(isAuthenticated){
+        return(
+            <Navigate to="/docdash" />
+        )
+    }
 
 
     return(
@@ -144,6 +149,12 @@ const RegisterDoc = ({setAlert, registerDoc}) => {
 
 RegisterDoc.propTypes = {
     setAlert: PropTypes.func.isRequired,
-    registerDoc: PropTypes.func.isRequired
+    registerDoc: PropTypes.func.isRequired,
+    isAuthenticated: PropTypes.bool
+
 };
-export default connect(null, {setAlert, registerDoc})(RegisterDoc);
+
+const mapStateToProps = (state) => ({
+    isAuthenticated: state.auth.isAuthenticated
+});
+export default connect(mapStateToProps, {setAlert, registerDoc})(RegisterDoc);

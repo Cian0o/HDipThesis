@@ -1,12 +1,13 @@
 import React, {Fragment, useState} from 'react';
 import {connect} from 'react-redux';
+import {Link, Navigate} from 'react-router-dom';
 import PropTypes from "prop-types";
 import {setAlert} from "../../actions/alert";
 import {registerPharma} from "../../actions/auth";
 
 
 
-const RegisterPharma = ({setAlert, registerPharma}) => {
+const RegisterPharma = ({setAlert, registerPharma, isAuthenticated}) => {
 
     const [formData, setFormData] = useState({
         PSIN: '',
@@ -40,6 +41,11 @@ const RegisterPharma = ({setAlert, registerPharma}) => {
         }
     }
 
+    if(isAuthenticated){
+        return(
+            <Navigate to="/pharmadash" />
+        )
+    }
 
     return(
         <section className="landing">
@@ -149,6 +155,11 @@ const RegisterPharma = ({setAlert, registerPharma}) => {
 
 RegisterPharma.propTypes = {
     setAlert: PropTypes.func.isRequired,
-    registerPharma: PropTypes.func.isRequired
+    registerPharma: PropTypes.func.isRequired,
+    isAuthenticated: PropTypes.bool
 };
-export default connect(null, {setAlert, registerPharma})(RegisterPharma);
+
+const mapStateToProps = (state) => ({
+    isAuthenticated: state.auth.isAuthenticated
+});
+export default connect(mapStateToProps, {setAlert, registerPharma})(RegisterPharma);
