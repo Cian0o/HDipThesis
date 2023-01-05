@@ -14,7 +14,7 @@ module.exports = function(req, res, next){
     try{
         const decoded = jwt.verify(token, config.get('jwtSecretDoc'));
 
-        req.surgery = decoded.surgery;
+        req.prescription = decoded.prescription;
         next();
     } catch(err){
         res.status(401).json({msg: 'Auth Token Invalid!'});
