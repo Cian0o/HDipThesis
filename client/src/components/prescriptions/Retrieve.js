@@ -5,7 +5,7 @@ import {connect} from "react-redux";
 import {retrievePresc} from "../../actions/retrieve";
 import setAuthToken from "../../utils/setAuthToken";
 import api from "../../utils/api";
-import {AUTH_ERROR, USER_LOADED} from "../../actions/types";
+import {RETRIEVE_PRESCRIPTION, RETRIEVE_FAIL} from "../../actions/types";
 
 
 
@@ -69,7 +69,12 @@ import {AUTH_ERROR, USER_LOADED} from "../../actions/types";
 }
 
 Retrieve.propTypes = {
-    // setAlert: PropTypes.func.isRequired,
-    retrievePresc: PropTypes.func.isRequired
-};
-export default connect(null, {retrievePresc})(Retrieve);
+    retrievePresc: PropTypes.func.isRequired,
+    isAuthenticated: PropTypes.bool
+}
+
+const mapStateToProps = (state) => ({
+    isAuthenticated: state.auth.isAuthenticated
+});
+
+export default connect(mapStateToProps, {retrievePresc})(Retrieve);

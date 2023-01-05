@@ -1,6 +1,6 @@
-import  {
+import {
     RETRIEVE_PRESCRIPTION,
-    REGISTER_FAIL
+    REGISTER_FAIL, RETRIEVE_FAIL
 } from "../actions/types";
 
 const initialState = {
@@ -20,14 +20,13 @@ export default function(state = initialState, action){
                 ...state,
                 ...payload,
                 isAuthenticated: true,
-                loading: false
+                loading: false,
+                prescription: payload
             }
-        case REGISTER_FAIL:
-            localStorage.removeItem('token');
+        case RETRIEVE_FAIL:
             return{
                 ...state,
-                token: null,
-                isAuthenticated: false,
+                isAuthenticated: true,
                 loading: false
             }
         default:

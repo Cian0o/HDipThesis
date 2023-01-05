@@ -60,6 +60,7 @@ app.use('/api/surgeries', require('./routes/api/surgeries'));
 app.use('/api/docauth', require('./routes/api/docauth'));
 app.use('/api/pharmaauth', require('./routes/api/pharmaauth'));
 app.use('/api/prescriptions', require('./routes/api/prescriptions'));
+app.use('/api/prescGetPut', require('./routes/api/prescGetPut'));
 
 
 

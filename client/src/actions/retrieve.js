@@ -3,17 +3,17 @@ import axios from 'axios';
 import {setAlert} from "./alert";
 import {
     RETRIEVE_PRESCRIPTION,
-    RETRIEVE_FAIL,
-    REGISTER_FAIL, USER_LOADED, AUTH_ERROR
+    RETRIEVE_FAIL
+
 } from "./types";
 import setAuthToken from "../utils/setAuthToken";
 
-export const retrievePresc = () => async (disptach) => {
+export const retrievePresc = (formData) => async (disptach) => {
     if(localStorage.token) {
         setAuthToken(localStorage.token);
     }
     try {
-        const res = await api.get('/prescGetPut');
+        const res = await api.get('/prescriptions');
 
         disptach({
             type: RETRIEVE_PRESCRIPTION,
