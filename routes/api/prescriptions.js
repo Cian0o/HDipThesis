@@ -35,7 +35,8 @@ router.get('/', prescMiddle, async (req, res) => {
 // Description: Submit Prescription Route
 // Access: Private (prescMiddle to be readded)
 
-router.post('/',  [
+router.post('/',
+    [
         check('PPSN', 'Please Enter a valid PPS Number').not().isEmpty()
         , check('patientName', 'Please Enter an Patient Name').not().isEmpty(),
         check('presFreQ', 'Please enter a  prescription frequency in days').isNumeric().not().isEmpty(),

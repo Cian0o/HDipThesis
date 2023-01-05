@@ -4,6 +4,7 @@ import  {
     USER_LOADED,
     AUTH_ERROR,
     LOGIN_SUCCESS,
+    GOOGLE_AUTH,
     LOGIN_FAIL,
     LOGOUT
 } from "../actions/types";
@@ -32,6 +33,7 @@ function authReducer(state = initialState, action) {
             }
         case REGISTER_SUCCESS:
         case LOGIN_SUCCESS:
+        case GOOGLE_AUTH:
             localStorage.setItem('token', payload.token);
             return{
                 ...state,

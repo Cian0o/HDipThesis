@@ -7,6 +7,8 @@ const jwt = require("jsonwebtoken");
 const config = require("config");
 const mongoose = require('mongoose');
 const router = express.Router();
+const passport = require("passport");
+
 
 // route is: GET api/docauth
 // Description: Test Route
@@ -91,5 +93,7 @@ router.post('/',
 
 
     });
+
+
 
 module.exports = router;

@@ -3,8 +3,16 @@ const dotenv = require('dotenv');
 const path = require('path');
 const  connectDB = require('./config/db');
 const cors = require('cors');
-// var bodyParser = require('body-parser')
-const servePages = require('./routes/servePages.js')
+const session = require("express-session");
+const mongoose = require("mongoose");
+const MongoStore = require('connect-mongo')
+// var bodyParser = require('body-parser');
+// const passport = require('./strategy');
+// const http = require('http')
+// const util = require('util')
+// const LinkedInStrategy = require('passport-linkedin').Strategy;
+
+const servePages = require('./routes/servePages.js');
 
 const  app = express();
 
@@ -55,6 +63,9 @@ app.use('/api/prescriptions', require('./routes/api/prescriptions'));
 
 
 
+
+
 app.listen(port, console.log(`Server running http://localhost:${port} in ${process.env.NODE_ENV} mode on port ${port}`) );
 
 // console.log(`Server started at http://localhost:8080 on port ${port}`);
+

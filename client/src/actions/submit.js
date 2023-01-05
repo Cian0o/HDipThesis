@@ -2,6 +2,7 @@ import api from '../utils/api';
 import axios from 'axios';
 import {setAlert} from "./alert";
 import {
+    PRESCRIPTION_FAILED,
     PRESCRIPTION_SUBMITTED,
     REGISTER_FAIL
 } from "./types";
@@ -31,7 +32,7 @@ export const submitPresc = (formData) =>
             }
 
             dispatch({
-                type: REGISTER_FAIL,
+                type: PRESCRIPTION_FAILED,
 
             })
 

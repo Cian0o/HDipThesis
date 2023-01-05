@@ -3,37 +3,29 @@ import axios from 'axios';
 import {setAlert} from "./alert";
 import {
     RETRIEVE_PRESCRIPTION,
-    REGISTER_FAIL
+    RETRIEVE_FAIL,
+    REGISTER_FAIL, USER_LOADED, AUTH_ERROR
 } from "./types";
+import setAuthToken from "../utils/setAuthToken";
 
-export const retrievePresc = (formData) =>
-    async (dispatch) => {
-        const config = {
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }
-        // const body = JSON.stringify({IMCN,DocEmail,DocPassword, DocPasswordConf, DocName, DocPhone, DocAddress});
-
-        try {
-            const res = await api.post('/prescriptions', formData);
-
-
-            dispatch({
-                type: RETRIEVE_PRESCRIPTION,
-                payload: res.data
-            });
-        } catch(err){
-            const errors = err.response.data.errors;
-
-            if(errors){
-                errors.forEach(error => dispatch(setAlert(error.msg, 'danger')));
-            }
-
-            dispatch({
-                type: REGISTER_FAIL,
-
-            })
-
-        }
+export const retrievePresc = () => async (disptach) => {
+    if(localStorage.token) {
+        setAuthToken(localStorage.token);
     }
+    try {
+        const res = await api.get('/prescGetPut');
+
+        disptach({
+            type: RETRIEVE_PRESCRIPTION,
+            payload: res.data
+        });
+
+    }
+    catch(err){
+
+        disptach({
+            type: RETRIEVE_FAIL
+        });
+
+    }
+}

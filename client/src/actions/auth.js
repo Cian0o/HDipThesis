@@ -8,11 +8,34 @@ import {
     USER_LOADED,
     AUTH_ERROR,
     LOGIN_SUCCESS,
+    GOOGLE_AUTH,
     LOGIN_FAIL,
     LOGOUT
 } from "./types";
 
 import setAuthToken from "../utils/setAuthToken";
+
+export const loadUser = () => async (disptach) => {
+    if(localStorage.token) {
+        setAuthToken(localStorage.token);
+    }
+    try {
+        const res = await api.get('/docauth');
+
+        disptach({
+            type: USER_LOADED,
+            payload: res.data
+        });
+
+    }
+    catch(err){
+
+        disptach({
+            type: AUTH_ERROR
+        });
+
+    }
+}
 
 export const loadUserDoc = () => async (disptach) => {
     if(localStorage.token) {
@@ -127,37 +150,7 @@ export const registerPharma = (formData) =>
         }
     }
 
-export const submitPresc = (formData) =>
-    async (dispatch) => {
-        const config = {
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }
-        // const body = JSON.stringify({IMCN,DocEmail,DocPassword, DocPasswordConf, DocName, DocPhone, DocAddress});
 
-        try {
-            const res = await api.post('/prescriptions', formData);
-
-
-            dispatch({
-                type: PRESCRIPTION_SUBMITTED,
-                payload: res.data
-            });
-        } catch(err){
-            const errors = err.response.data.errors;
-
-            if(errors){
-                errors.forEach(error => dispatch(setAlert(error.msg, 'danger')));
-            }
-
-            dispatch({
-                type: REGISTER_FAIL,
-
-            })
-
-        }
-    }
 
 
 //     Login  User

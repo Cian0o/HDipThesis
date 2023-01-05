@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Navbar from "./components/layout/Navbar";
@@ -14,13 +14,15 @@ import WhichLogin from "./components/auth/WhichLogin";
 import LoginPharma from "./components/auth/LoginPharma";
 import LoginDoc from "./components/auth/LoginDoc";
 import LoginPassword from "./components/auth/LoginPassword";
-import Submit from "./components/layout/Submit";
-import Retrieve from "./components/layout/Retrieve";
-import ViewPresc from "./components/layout/ViewPresc";
-import Amend from "./components/layout/Amend";
+import Submit from "./components/prescriptions/Submit";
+import Retrieve from "./components/prescriptions/Retrieve";
+import ViewPresc from "./components/prescriptions/ViewPresc";
+import Amend from "./components/prescriptions/Amend";
 import Alert from "./components/layout/Alert";
 import { loadUserDoc } from "./actions/auth";
 import { loadUserPharma } from "./actions/auth";
+import jwt_decode from 'jwt-decode';
+
 
 import {Provider} from 'react-redux';
 import store from './store';
@@ -40,6 +42,25 @@ import setAuthToken from "./utils/setAuthToken";
 
 
 const App = () => {
+
+    const [user,setUser] = useState({});
+
+    function handleCallbackResponse(response){
+        console.log("Encoded JWT Token ID token" + response.credential);
+        const userObject = jwt_decode(response.credential);
+        console.log(userObject);
+    }
+
+    useEffect(()  => {
+        google.accounts.id.initialize({
+            client_id: "919935922047-m0vnc2jtb9bt3au0c3054lcrm9sjdfa5.apps.googleusercontent.com",
+            callback: handleCallbackResponse
+        })
+        google.accounts.id.renderButton(
+            document.getElementById('googleButton'),
+            {theme: "outline", size: "large"});
+    }, [])
+
 
 
 

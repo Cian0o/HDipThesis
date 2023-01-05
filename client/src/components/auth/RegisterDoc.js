@@ -44,29 +44,29 @@ const RegisterDoc = ({setAlert, registerDoc, isAuthenticated}) => {
         <section className="landing">
             <div className="dark-overlay">
                 <div className="landing-inner">
-                    <h1 className="lead">thÉireP</h1>
+                    <h1 className="lead">Register Your Surgery:</h1>
 
-                    <div style={{ width: "100%", textAlign: "center" }}>
-                        <div className="tx--social" style={{ margin: "auto", maxWidth: 600 }}>
-                            <a
-                                className="social-button"
-                                // style={{ display: "none" }}
-                                id="google-connect"
-                            >
-                                <span>Google</span>
-                            </a>
-                            <a
-                                className="social-button"
-                                // style={{ display: "none" }}
-                                id="linkedin-connect"
-                            >
-                                <span>LinkedIn</span>
-                            </a>
+                    {/*<div style={{ width: "100%", textAlign: "center" }}>*/}
+                    {/*    <div className="tx--social" style={{ margin: "auto", maxWidth: 600 }}>*/}
+                    {/*        <a*/}
+                    {/*            className="social-button"*/}
+                    {/*            // style={{ display: "none" }}*/}
+                    {/*            id="google-connect"*/}
+                    {/*        >*/}
+                    {/*            <span>Google</span>*/}
+                    {/*        </a>*/}
+                    {/*        <a*/}
+                    {/*            className="social-button"*/}
+                    {/*            // style={{ display: "none" }}*/}
+                    {/*            id="linkedin-connect"*/}
+                    {/*        >*/}
+                    {/*            <span>LinkedIn</span>*/}
+                    {/*        </a>*/}
 
-                        </div>
-                    </div>
+                        {/*</div>*/}
+                    {/*</div>*/}
 
-                    <div>
+                    <div className="form_Container">
                         <form className="form" onSubmit={onSubmit}>
                             <div className="form-group">
                                 <input
@@ -127,7 +127,7 @@ const RegisterDoc = ({setAlert, registerDoc, isAuthenticated}) => {
                             <div className="form-group">
                                 <input
                                     type="number"
-                                    placeholder="Surgery Phone Number"
+                                    placeholder="Surgery Phone"
                                     name="DocPhone"
                                     value={DocPhone}
                                     onChange={onChange}
