@@ -13,7 +13,7 @@ export const retrievePresc = (formData) => async (disptach) => {
         setAuthToken(localStorage.token);
     }
     try {
-        const res = await api.get('/prescriptions');
+        const res = await api.get('/prescriptions', formData);
 
         disptach({
             type: RETRIEVE_PRESCRIPTION,

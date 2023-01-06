@@ -6,7 +6,8 @@ const ViewPresc = () => {
     return(
         <section className="landing">
             <>
-                <p> Your Prescriptions Are: </p>
+                <div className="prescTable">
+                <p> Your Prescription is: </p>
                 <table border={12}>
                     <thead>
                     <tr>
@@ -52,6 +53,7 @@ const ViewPresc = () => {
 
                     </thead>
                 </table>
+                </div>
                 <table></table>
             </>
 

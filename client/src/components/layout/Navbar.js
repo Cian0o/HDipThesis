@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import {logout} from "../../actions/auth";
 
 import logo from './logo3.png';
+import logout1 from './logout2.png';
 
 const Navbar = ({auth: {isAuthenticated, loading}, logout}) => {
     return(
@@ -34,35 +35,25 @@ const Navbar = ({auth: {isAuthenticated, loading}, logout}) => {
                         <Link to="/amend">Amend Prescription</Link>
                     </div>
                 </div>
-                <div className="logoPic">
+
+                <div className="nav_icons">
+                <div className="home_button">
                   <Link to='/'>  <img src={logo}/></Link>
+
                 </div>
-                <div className="login">
-                    <Link to="#">
-                        <img src="../img/logintry2_75x75.png" onClick="loginCredentials()"/>
-                    </Link>
-                    <div id="login-content">
-                        <div className="arrow-up"/>
-                        <div id="loginDropDown">
-                            <form className="login-form">
-                                <p style={{fontWeight: "bold"}}>LoginPharma Email</p>
-                                <input className="inputBoxBlack" type="email" name="LoginEmail"/>
-                                <br/>
-                                <p style={{fontWeight: "bold"}}>Password</p>
-                                <input className="inputBoxBlack" type="text" name="Password"/>
-                                <br/>
-                                <Link to="#">
-                                    <p style={{fontWeight: "bold", fontSize: 14, color: "#000000"}}>
-                                        Forgot LoginPharma Credentials?
-                                    </p>
-                                </Link>
-                                <p>
-                                    <input className="buttonBlack" type="submit" defaultValue="LoginPharma"/>
-                                </p>
-                            </form>
-                        </div>
-                    </div>
+                <div className="logoutlogo">
+
+                    <Link to='/'>  <img  src={logout1}/></Link>
                 </div>
+
+                </div>
+
+
+
+
+
+
+
             </header>
 
 
@@ -73,14 +64,7 @@ const Navbar = ({auth: {isAuthenticated, loading}, logout}) => {
     )
 }
 
-function loginCredentials() {
-    var x = document.getElementById("login-content");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
-}
+
 
 Navbar.propTypes = {
     logout: PropTypes.func.isRequired,

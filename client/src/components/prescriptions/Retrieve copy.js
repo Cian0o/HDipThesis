@@ -10,13 +10,13 @@ import {RETRIEVE_PRESCRIPTION, RETRIEVE_FAIL} from "../../actions/types";
 
 
 
-    const Retrieve = ({setAlert, retrievePresc, prescription}) => {
-        const [formData, setFormData] = useState({
-            PPSN: ''
+const Retrieve = ({setAlert, retrievePresc, prescription}) => {
+    const [formData, setFormData] = useState({
+        PPSN: ''
 
-        });
+    });
 
-        const {PPSN} = formData;
+    const {PPSN} = formData;
 
     const handleChange = (e) => setFormData({...formData, [e.target.name]: e.target.value});
 

@@ -16,13 +16,11 @@ export default function(state = initialState, action){
     switch (type){
         case RETRIEVE_PRESCRIPTION:
             localStorage.setItem('token', payload.token);
-            return{
+            return {
                 ...state,
-                ...payload,
-                isAuthenticated: true,
-                loading: false,
-                prescription: payload
-            }
+                prescription: payload,
+                loading: false
+            };
         case RETRIEVE_FAIL:
             return{
                 ...state,

@@ -18,7 +18,7 @@ const prescMiddle = require('../../middleware/prescMiddle')
 router.get('/' , async (req, res) => {
     try{
         const PPSN = req.body;
-        const prescription = await Prescription.find(PPSN);
+        const prescription = await Prescription.findOne(PPSN);
         res.json(prescription);
     } catch(err){
         console.error(err.message);
