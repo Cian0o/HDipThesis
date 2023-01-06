@@ -1,0 +1,5 @@
+{
+  "mongoURI": "mongodb+srv://Cian0o:tÉireP@cluster0.8gmvgfn.mongodb.net/?retryWrites=true&w=majority",
+  "jwtSecretDoc":  "surgerytoken",
+  "jwtSecretPharma":  "pharmatoken"
+}
