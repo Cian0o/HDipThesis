@@ -8,6 +8,7 @@ import logo from './logo3.png';
 import logout1 from './logout2.png';
 
 const Navbar = ({auth: {isAuthenticated, loading}, logout}) => {
+
     return(
         <Fragment>
 
@@ -43,7 +44,7 @@ const Navbar = ({auth: {isAuthenticated, loading}, logout}) => {
                 </div>
                 <div className="logoutlogo">
 
-                    <Link to='/'>  <img  src={logout1}/></Link>
+                    <Link onClick={logout}>  <img  src={logout1}/></Link>
                 </div>
 
                 </div>
